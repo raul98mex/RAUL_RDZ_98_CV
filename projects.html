@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About - Raúl Rodríguez Ruiz</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="style.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Raúl Rodríguez Ruiz</h1>
+          <p>Business Analyst | Business Management Engineer | Web dev beginner</p>
+        <nav>
+            <ul>
+                <li class="section-menu"><a href="index.html">Home</a></li>
+                <li class="section-menu"><a href="skills.html">Skills</a></li>
+                <li class="section-menu active"><a href="projects.html">Projects</a></li>
+                <li class="section-menu"><a href="experience.html">Job Experience</a></li>
+                <li class="section-menu"><a href="education.html">Education</a></li>
+                <li class="section-menu"><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="projects">
+    <h2 class="section-title">Projects</h2>
+    <div class="skill-controls" style="text-align:center; margin-bottom: 1rem;">
+  <button class="btn-skills" onclick="expandAllSkills()">Expand All</button>
+  <button class="btn-skills" onclick="collapseAllSkills()">Collapse All</button>
+</div>
+
+    <div class="skills">
+        <div class="skill skill-item" onclick="toggleDescription(this)">
+            <div class="skill-title">
+                <span>IT Equipment Management</span>
+                <span class="arrow">&#9654;</span>
+            </div>
+            <p>Monterrey, Mexico</p>
+            <p>2025</p>
+            <div class="skill-description">
+                <p>Designed and implemented a web-based platform to streamline IT equipment inventory tracking, allocation, and maintenance for a manufacturing company. Improved asset visibility and reduced manual errors.</p>
+            </div>
+        </div>
+
+        <div class="skill skill-item" onclick="toggleDescription(this)">
+            <div class="skill-title">
+                <span>SEMI-RMA Warehouse Inventory Management</span>
+                <span class="arrow">&#9654;</span>
+            </div>
+            <p>Monterrey, Mexico</p>
+            <p>2025</p>
+            <div class="skill-description">
+                <p>Developed a custom inventory management system for a transportation company’s SEMI-RMA warehouse, enabling real-time stock updates, automated reporting, and enhanced process efficiency.</p>
+            </div>
+        </div>
+
+        <div class="skill skill-item" onclick="toggleDescription(this)">
+            <div class="skill-title">
+                <span>Inventory Management</span>
+                <span class="arrow">&#9654;</span>
+            </div>
+            <p>Monterrey, Mexico</p>
+            <p>2024</p>
+            <div class="skill-description">
+                <p>Created a scalable inventory management web application for a manufacturing client, featuring user-friendly dashboards, analytics, and automated reorder alerts to optimize stock levels.</p>
+            </div>
+        </div>
+
+        <div class="skill skill-item" onclick="toggleDescription(this)">
+            <div class="skill-title">
+                <span>Insurance & Bonds</span>
+                <span class="arrow">&#9654;</span>
+            </div>
+            <p>San Pedro Garza García, Mexico</p>
+            <p>2024</p>
+            <div class="skill-description">
+                <p>Designed and implemented an internal operations platform for an insurance and bonds company, streamlining policy management, claims processing, and client communications to enhance operational efficiency.</p>
+            </div>
+        </div>
+
+        <div class="skill skill-item" onclick="toggleDescription(this)">
+            <div class="skill-title">
+                <span>Reverse Logistics</span>
+                <span class="arrow">&#9654;</span>
+            </div>
+            <p>Monterrey, Mexico. For a US company</p>
+            <p>2023</p>
+            <div class="skill-description">
+                <p>Modernized a web platform to optimize business processes and developed a new module for reverse logistics, improving returns management and integrating advanced tracking features for a US-based client.</p>
+            </div>
+        </div>
+
+        <div class="skill skill-item" onclick="toggleDescription(this)">
+            <div class="skill-title">
+                <span>DIAPP</span>
+                <span class="arrow">&#9654;</span>
+            </div>
+            <p>San Pedro Garza García, Mexico</p>
+            <p>2022</p>
+            <div class="skill-description">
+                <p>Developed a specialized web platform for diabetic patient management, enabling secure data tracking, appointment scheduling, and personalized health analytics for improved patient care.</p>
+            </div>
+        </div>
+
+</section>
+   <footer>
+    <section id="contact" class="contact-section">
+        
+        <h2 class="section-title contact-title">Contact</h2>
+        <p class="contact-item">
+            <img src="https://cdn-icons-png.flaticon.com/24/732/732200.png" alt="Email Icon" width="20" height="20">
+            <strong>Email:</strong> raulrdzr98@gmail.com
+            <a class="contact-link" href="mailto:raulrdzr98@gmail.com?subject=%5BYour%20Company%5D%20Job%20Opportunity&body=Hello%20Ra%C3%BAl%20!%0A%0A%0ARegards,%0A[Your%20Name]">Send me an email</a>
+        </p>
+        <p class="contact-item">
+            <img src="https://cdn-icons-png.flaticon.com/24/174/174857.png" alt="LinkedIn Icon" width="20" height="20">
+            <strong>LinkedIn:</strong> https://www.linkedin.com/in/raulrdz98/
+            <a class="contact-link" href="https://www.linkedin.com/in/raulrdz98/" target="_blank">Visit my LinkedIn</a>
+        </p>
+        <p class="contact-item">
+            <img class="white-icon" src="https://cdn-icons-png.flaticon.com/24/597/597177.png" alt="Phone Icon" width="20" height="20">
+            <strong>Phone:</strong> +52 8114148191
+            <a class="contact-link" href="tel:+528114148191">Call me</a>
+        </p>
+    </section>
+    <!-- Back to Top Button -->
+    <a href="#top" class="back-to-top-btn" id="backToTopBtn" aria-label="Back to Top">
+        <svg width="50" height="50" viewBox="0 0 28 28" fill="none">
+            <circle cx="14" cy="14" r="13" fill="#fff" stroke="#1976d2" stroke-width="2"/>
+            <polyline points="9,16 14,11 19,16" fill="none" stroke="#1976d2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </a>
+
+        <section id="contact" class="contact-section">
+        
+        <h2 class="section-title contact-title">Location</h2>
+        <p class="contact-item">
+            <img src="https://cdn-icons-png.flaticon.com/24/684/684908.png" alt="Location Icon" width="20" height="20">
+            <strong>Location:</strong> San Pedro Garza García, Nuevo León, México
+            <a class="contact-link" href="https://maps.app.goo.gl/Z9TRzVUrZHV2DqJk6">See on google maps</a>
+    
+     <section class="download-section">
+        <div >
+
+<a href="cv/Raul-Rodriguez-Ruiz-CV-25-ENGLISH.pdf" download class="btn-download-contact">Download  CV
+    <img src="https://cdn.jsdelivr.net/gh/hjnilsson/country-flags/svg/us.svg" alt="USA Flag" width="22" height="16" style="vertical-align:middle; margin-left:6px;">
+    </a>
+<a href="cv/Raul-Rodriguez-Ruiz-CV-25-ESPANOL.pdf" download class="btn-download-contact">Descargar CV
+    <img src="https://cdn.jsdelivr.net/gh/hjnilsson/country-flags/svg/mx.svg" alt="Mexico Flag" width="22" height="16" style="vertical-align:middle; margin-left:6px;">
+    </a>
+
+        </div>
+    </section>
+    <p class="footer-text">&copy; 2025 Raúl Rodríguez Ruiz. All rights reserved.</p>
+   
+</footer>
+</body>
+</html>

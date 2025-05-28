@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About - Raúl Rodríguez Ruiz</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header>
+        <h1>Raúl Rodríguez Ruiz</h1>
+          <p>Business Analyst | Business Management Engineer | Web dev beginner</p>
+        <nav>
+            <ul>
+                <li class="section-menu active"><a href="index.html">Home</a></li>
+                <li class="section-menu"><a href="skills.html">Skills</a></li>
+                <li class="section-menu"><a href="projects.html">Projects</a></li>
+                <li class="section-menu"><a href="experience.html">Job Experience</a></li>
+                <li class="section-menu"><a href="education.html">Education</a></li>
+                <li class="section-menu"><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    <section>
+        <div class="cv-buttons">
+
+<a href="cv/Raul-Rodriguez-Ruiz-CV-25-ENGLISH.pdf" download class="btn-download">
+    Download CV 
+    <img src="https://cdn.jsdelivr.net/gh/hjnilsson/country-flags/svg/us.svg" alt="USA Flag" width="22" height="16" style="vertical-align:middle; margin-left:6px;">
+    <img src="download icon/download.png" alt="Download Icon" width="20" height="20" style="vertical-align:middle; margin-right:6px; filter: invert(32%) sepia(99%) saturate(7497%) hue-rotate(202deg) brightness(97%) contrast(101%);">
+</a>
+
+<a href="cv/Raul-Rodriguez-Ruiz-CV-25-ESPANOL.pdf" download class="btn-download">
+    Descargar CV 
+    <img src="https://cdn.jsdelivr.net/gh/hjnilsson/country-flags/svg/mx.svg" alt="Mexico Flag" width="22" height="16" style="vertical-align:middle; margin-left:6px;">
+    <img src="download icon/download.png" alt="Download Icon" width="20" height="20" style="vertical-align:middle; margin-right:6px; filter: invert(32%) sepia(99%) saturate(7497%) hue-rotate(202deg) brightness(97%) contrast(101%);">
+</a>
+
+    
+        </div>
+    </section>
+        <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <p>I’m a bilingual Business Analyst and Business Management Engineer with experience across technology, manufacturing, and healthcare. Skilled in project coordination, data analysis, and process improvement, I bridge the gap between business needs and technical execution. I’ve led and supported web platform projects using Agile and Waterfall methodologies, focusing on stakeholder collaboration, user stories, and quality assurance. Proficient in tools like SQL, Python, Excel, Jira, and Lucidchart, I bring analytical thinking and adaptability to every project. Fluent in English and Spanish, I’m passionate about solving complex problems, driving efficiency, and delivering value through thoughtful, data-driven strategies.</p>
+    </section>
+    <section class="image-section" style="display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: 32px; margin: 32px 0;">
+        <div class="image-card">
+            <img src="images/graduation.jpeg" class="profile-image" alt="Raúl Rodríguez Ruiz Graduation">
+            <div class="image-card-text">
+                <span class="image-card-title">Bachelor</span>
+                <p class="image-card-desc">Business management engineer</p>
+            </div>
+        </div>
+        <div class="image-card">
+            <img src="images/me.jpeg" class="profile-image" alt="Raúl Rodríguez Ruiz">
+            <div class="image-card-text">
+                <span class="image-card-title">My Job</span>
+                <p class="image-card-desc">Business Analyst</p>
+            </div>
+        </div>
+        <div class="image-card">
+            <img src="images/paris.jpeg" class="profile-image" alt="Raúl Rodríguez Ruiz">
+            <div class="image-card-text">
+                <span class="image-card-title">Hobbie</span>
+                <p class="image-card-desc">Traveling</p>
+            </div>
+        </div>
+        <div class="image-card">
+            <img src="images/golf.jpeg" class="profile-image" alt="Raúl Rodríguez Ruiz" style="aspect-ratio: 4/5.2; object-fit: cover;">
+            <div class="image-card-text">
+                <span class="image-card-title">Hobbie</span>
+                <p class="image-card-desc">Golf</p>
+            </div>
+        </div>
+        <div class="image-card">
+            <img src="images/fish.jpeg" class="profile-image" alt="Raúl Rodríguez Ruiz">
+            <div class="image-card-text">
+                <span class="image-card-title">Hobbie</span>
+                <p class="image-card-desc">Fishing</p>
+            </div>
+        </div>
+    </section>
+    <style>
+    .image-section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 32px;
+        margin: 32px 0;
+    }
+    .image-card {
+        box-shadow: 0 4px 24px rgba(25, 118, 210, 0.15);
+        border-radius: 16px;
+        overflow: hidden;
+        background: #fff;
+        padding: 16px;
+        max-width: 320px;
+        flex: 1 1 220px;
+        min-width: 220px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .profile-image {
+        display: block;
+        width: 100%;
+        aspect-ratio: 4/5;
+        height: auto;
+        border-radius: 12px;
+        border: 3px solid #1976d2;
+        box-shadow: 0 2px 12px rgba(25, 118, 210, 0.10);
+        transition: transform 0.3s;
+        object-fit: cover;
+        margin-bottom: 12px;
+        background: #f3f6fa;
+    }
+    .image-card-text {
+        text-align: center;
+        margin-top: 12px;
+    }
+    .image-card-title {
+        font-size: 1.1em;
+        color: #1976d2;
+        font-weight: 600;
+    }
+    .image-card-desc {
+        margin: 4px 0 0 0;
+        color: #555;
+        font-size: 0.95em;
+    }
+    @media (max-width: 900px) {
+        .image-section {
+            gap: 20px;
+        }
+        .image-card {
+            max-width: 45vw;
+    @media (max-width: 600px) {
+        .image-section {
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+        .image-card {
+            max-width: 95vw;
+            min-width: 0;
+            width: 100%;
+            padding: 12px;
+        }
+        .profile-image {
+            aspect-ratio: 4/5;
+            width: 100%;
+            height: auto;
+            min-height: 180px;
+            max-height: 340px;
+        }
+    }
+            width: 100%;
+        }
+    }
+    </style>
+    </section>
+    </header>
+
+<footer>
+    <section id="contact" class="contact-section">
+        
+        <h2 class="section-title contact-title">Contact</h2>
+        <p class="contact-item">
+            <img src="https://cdn-icons-png.flaticon.com/24/732/732200.png" alt="Email Icon" width="20" height="20">
+            <strong>Email:</strong> raulrdzr98@gmail.com
+            <a class="contact-link" href="mailto:raulrdzr98@gmail.com?subject=%5BYour%20Company%5D%20Job%20Opportunity&body=Hello%20Ra%C3%BAl%20!%0A%0A%0ARegards,%0A[Your%20Name]">Send me an email</a>
+        </p>
+        <p class="contact-item">
+            <img src="https://cdn-icons-png.flaticon.com/24/174/174857.png" alt="LinkedIn Icon" width="20" height="20">
+            <strong>LinkedIn:</strong> https://www.linkedin.com/in/raulrdz98/
+            <a class="contact-link" href="https://www.linkedin.com/in/raulrdz98/" target="_blank">Visit my LinkedIn</a>
+        </p>
+        <p class="contact-item">
+            <img class="white-icon" src="https://cdn-icons-png.flaticon.com/24/597/597177.png" alt="Phone Icon" width="20" height="20">
+            <strong>Phone:</strong> +52 8114148191
+            <a class="contact-link" href="tel:+528114148191">Call me</a>
+        </p>
+    </section>
+    <!-- Back to Top Button (only visible when scrolling down) -->
+    <a href="#top" class="back-to-top-btn" id="backToTopBtn" aria-label="Back to Top" style="display:none;position:fixed;bottom:32px;right:32px;z-index:1000;">
+        <svg width="50" height="50" viewBox="0 0 28 28" fill="none">
+            <circle cx="14" cy="14" r="13" fill="#fff" stroke="#1976d2" stroke-width="2"/>
+            <polyline points="9,16 14,11 19,16" fill="none" stroke="#1976d2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </a>
+    <script>
+    // Show/hide back to top button on scroll
+    window.addEventListener('scroll', function() {
+        const btn = document.getElementById('backToTopBtn');
+        if (window.scrollY > 200) {
+            btn.style.display = 'block';
+        } else {
+            btn.style.display = 'none';
+        }
+    });
+    </script>
+
+        <section id="contact" class="contact-section">
+        
+        <h2 class="section-title contact-title">Location</h2>
+        <p class="contact-item">
+            <img src="https://cdn-icons-png.flaticon.com/24/684/684908.png" alt="Location Icon" width="20" height="20">
+            <strong>Location:</strong> San Pedro Garza García, Nuevo León, México
+            <a class="contact-link" href="https://maps.app.goo.gl/Z9TRzVUrZHV2DqJk6">See on google maps</a>
+    
+     <section class="download-section">
+        <div >
+
+<a href="cv/Raul-Rodriguez-Ruiz-CV-25-ENGLISH.pdf" download class="btn-download-contact">Download  CV
+    <img src="https://cdn.jsdelivr.net/gh/hjnilsson/country-flags/svg/us.svg" alt="USA Flag" width="22" height="16" style="vertical-align:middle; margin-left:6px;">
+    </a>
+<a href="cv/Raul-Rodriguez-Ruiz-CV-25-ESPANOL.pdf" download class="btn-download-contact">Descargar CV
+    <img src="https://cdn.jsdelivr.net/gh/hjnilsson/country-flags/svg/mx.svg" alt="Mexico Flag" width="22" height="16" style="vertical-align:middle; margin-left:6px;">
+    </a>
+
+        </div>
+    </section>
+    <p class="footer-text">&copy; 2025 Raúl Rodríguez Ruiz. All rights reserved.</p>
+   
+</footer>
+</body>
+</html>

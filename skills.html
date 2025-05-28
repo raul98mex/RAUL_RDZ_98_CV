@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skills - Raúl Rodríguez Ruiz</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="style.js"></script>
+  <style>
+    .skill-description {
+      text-align: left;
+    }
+    .skill-title {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 0.5rem;
+    }
+    .skill-title span.arrow {
+      margin-left: auto;
+    }
+    .skill-icon {
+      width: 20px;
+      height: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Raúl Rodríguez Ruiz</h1>
+    <p>Business Analyst | Business Management Engineer | Web dev beginner</p>
+    <nav>
+      <ul>
+        <li class="section-menu"><a href="index.html">Home</a></li>
+        <li class="section-menu active"><a href="skills.html">Skills</a></li>
+        <li class="section-menu"><a href="projects.html">Projects</a></li>
+        <li class="section-menu"><a href="experience.html">Job Experience</a></li>
+        <li class="section-menu"><a href="education.html">Education</a></li>
+        <li class="section-menu"><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="skills">
+    <h2 class="section-title">Skills</h2>
+    <div class="skill-controls" style="text-align:center; margin-bottom: 1rem;">
+      <button class="btn-skills" onclick="expandAllSkills()">Expand All</button>
+      <button class="btn-skills" onclick="collapseAllSkills()">Collapse All</button>
+    </div>
+
+    <div class="skills">
+ 
+    
+  <div class="skill skill-item" onclick="toggleDescription(this)">
+      <div class="skill-title">
+        <img src="icons/icons8-business-analyst-64.png" alt="icon" class="skill-icon" />
+        <span>Business Analyst</span>
+        <span class="arrow">&#9654;</span>
+      </div>
+      <div class="skill-description">Identify business needs, gather and document requirements, and recommend solutions to improve processes and achieve organizational goal.</div>
+    </div>
+
+    <div class="skill skill-item" onclick="toggleDescription(this)">
+      <div class="skill-title">
+        <img src="icons/icons8-project-manager-64.png" alt="icon" class="skill-icon" />
+        <span>Project Management</span>
+        <span class="arrow">&#9654;</span>
+      </div>
+      <div class="skill-description">Plan, execute, and oversee projects, managing scope, timelines, resources, and deliverables to ensure successful completion.</div>
+    </div>
+
+    <div class="skill skill-item" onclick="toggleDescription(this)">
+      <div class="skill-title">
+        <img src="icons/icons8-web-development-90.png" alt="icon" class="skill-icon" />
+        <span>Web Development</span>
+        <span class="arrow">&#9654;</span>
+      </div>
+      <div class="skill-description">Develop and maintain websites using HTML, CSS, and JavaScript, focusing on responsive design and user experience.</div>
+    </div>
+
+    <div class="skill skill-item" onclick="toggleDescription(this)">
+      <div class="skill-title">
+        <img src="icons/icons8-agile-development-64.png" alt="icon" class="skill-icon" />
+        <span>Agile Methodologies</span>
+        <span class="arrow">&#9654;</span>
+      </div>
+      <div class="skill-description">Apply Agile principles to foster collaboration, adaptability, and continuous improvement within project teams.</div>
+    </div>
+
+    <div class="skill skill-item" onclick="toggleDescription(this)">
+      <div class="skill-title">
+        <img src="icons/icons8-sprint-iteration-100.png" alt="icon" class="skill-icon" />
+        <span>Scrum Methodologies</span>
+        <span class="arrow">&#9654;</span>
+      </div>
+      <div class="skill-description">Facilitate Scrum ceremonies, manage sprints, and support teams in delivering incremental value efficiently.</div>
+    </div>
+
+    <div class="skill skill-item" onclick="toggleDescription(this)">
+      <div class="skill-title">
+        <img src="icons/icons8-waterfall-100.png" alt="icon" class="skill-icon" />
+        <span>Waterfall Methodologies</span>
+        <span class="arrow">&#9654;</span>
+      </div>
+      <div class="skill-description">Implement structured, sequential project management processes for predictable and well-documented outcomes.</div>
+    </div>
+
+    <div class="skill skill-item" onclick="toggleDescription(this)">
+      <div class="skill-title">
+        <img src="icons/icons8-process-100.png" alt="icon" class="skill-icon" />
+        <span>Process Modeling</span>
+        <span class="arrow">&#9654;</span>
+      </div>
+      <div class="skill-description">Design and visualize business processes using diagrams and modeling tools to optimize workflows and communication.</div>
+    </div>
+
+    <div class="skill skill-item" onclick="toggleDescription(this)">
+      <div class="skill-title">
+        <img src="icons/icons8-documentation-100.png" alt="icon" class="skill-icon" />
+        <span>Documentation</span>
+        <span class="arrow">&#9654;</span>
+      </div>
+      <div class="skill-description">Create clear, concise documentation including user stories, requirements, manuals, and process guides for diverse audiences.</div>
+    </div>
+
+    <div class="skill skill-item" onclick="toggleDescription(this)">
+      <div class="skill-title">
+        <img src="icons/icons8-stakeholder-100.png" alt="icon" class="skill-icon" />
+        <span>Stakeholder Management</span>
+        <span class="arrow">&#9654;</span>
+      </div>
+      <div class="skill-description">Engage stakeholders, gather feedback, manage expectations, and ensure alignment throughout project lifecycles.</div>
+    </div>
+
+    <div class="skill skill-item" onclick="toggleDescription(this)">
+      <div class="skill-title">
+        <img src="icons/icons8-javascript-100.png" alt="icon" class="skill-icon" />
+        <span>JavaScript</span>
+        <span class="arrow">&#9654;</span>
+      </div>
+      <div class="skill-description">Enhance web pages with interactivity and dynamic content using JavaScript for client-side development.</div>
+    </div>
+
+    <div class="skill skill-item" onclick="toggleDescription(this)">
+      <div class="skill-title">
+        <img src="icons/icons8-html-100.png" alt="icon" class="skill-icon" />
+        <span>HTML</span>
+        <span class="arrow">&#9654;</span>
+      </div>
+      <div class="skill-description">Structure web content semantically for accessibility, SEO, and maintainability across devices.</div>
+    </div>
+
+    <div class="skill skill-item" onclick="toggleDescription(this)">
+      <div class="skill-title">
+        <img src="icons/icons8-css-100.png" alt="icon" class="skill-icon" />
+        <span>CSS</span>
+        <span class="arrow">&#9654;</span>
+      </div>
+      <div class="skill-description">Style and layout web pages for visual appeal, responsiveness, and cross-browser compatibility.</div>
+    </div>
+
+    <div class="skill skill-item" onclick="toggleDescription(this)">
+      <div class="skill-title">
+        <img src="icons/icons8-critical-thinking-100.png" alt="icon" class="skill-icon" />
+        <span>Critical Thinking</span>
+        <span class="arrow">&#9654;</span>
+      </div>
+      <div class="skill-description">Analyze problems logically, evaluate solutions, and make informed decisions to drive business success.</div>
+    </div>
+
+    <div class="skill skill-item" onclick="toggleDescription(this)">
+      <div class="skill-title">
+        <img src="icons/icons8-jira-96.png" alt="icon" class="skill-icon" />
+        <span>Jira</span>
+        <span class="arrow">&#9654;</span>
+      </div>
+      <div class="skill-description">Track tasks, manage workflows, and support Agile project management using Jira software.</div>
+    </div>
+
+    <div class="skill skill-item" onclick="toggleDescription(this)">
+      <div class="skill-title">
+        <img src="icons/icons8-azure-devops-96.png" alt="icon" class="skill-icon" />
+        <span>DevOps</span>
+        <span class="arrow">&#9654;</span>
+      </div>
+      <div class="skill-description">Coordinate development and operations, automate deployments, and manage releases using DevOps tools.</div>
+    </div>
+
+    <div class="skill skill-item" onclick="toggleDescription(this)">
+      <div class="skill-title">
+        <img src="icons/icons8-chart-64.png" alt="icon" class="skill-icon" />
+        <span>Lucidchart</span>
+        <span class="arrow">&#9654;</span>
+      </div>
+      <div class="skill-description">Create diagrams and flowcharts to visualize systems, processes, and organizational structures.</div>
+    </div>
+
+    <div class="skill skill-item" onclick="toggleDescription(this)">
+      <div class="skill-title">
+        <img src="icons/icons8-flow-chart-96.png" alt="icon" class="skill-icon" />
+        <span>Draw.io</span>
+        <span class="arrow">&#9654;</span>
+      </div>
+      <div class="skill-description">Design process maps, technical diagrams, and visual documentation using Draw.io for effective communication.</div>
+    </div>
+
+    <div class="skill skill-item" onclick="toggleDescription(this)">
+      <div class="skill-title">
+        <img src="icons/icons8-data-analysis-100.png" alt="icon" class="skill-icon" />
+        <span>Data Analysis</span>
+        <span class="arrow">&#9654;</span>
+      </div>
+      <div class="skill-description">Collect, interpret, and visualize data to uncover insights, support decision-making, and drive business improvements.</div>
+    </div>
+        </div>
+    </section>
+<footer>
+    <section id="contact" class="contact-section">
+        
+        <h2 class="section-title contact-title">Contact</h2>
+        <p class="contact-item">
+            <img src="https://cdn-icons-png.flaticon.com/24/732/732200.png" alt="Email Icon" width="20" height="20">
+            <strong>Email:</strong> raulrdzr98@gmail.com
+            <a class="contact-link" href="mailto:raulrdzr98@gmail.com?subject=%5BYour%20Company%5D%20Job%20Opportunity&body=Hello%20Ra%C3%BAl%20!%0A%0A%0ARegards,%0A[Your%20Name]">Send me an email</a>
+        </p>
+        <p class="contact-item">
+            <img src="https://cdn-icons-png.flaticon.com/24/174/174857.png" alt="LinkedIn Icon" width="20" height="20">
+            <strong>LinkedIn:</strong> https://www.linkedin.com/in/raulrdz98/
+            <a class="contact-link" href="https://www.linkedin.com/in/raulrdz98/" target="_blank">Visit my LinkedIn</a>
+        </p>
+        <p class="contact-item">
+            <img class="white-icon" src="https://cdn-icons-png.flaticon.com/24/597/597177.png" alt="Phone Icon" width="20" height="20">
+            <strong>Phone:</strong> +52 8114148191
+            <a class="contact-link" href="tel:+528114148191">Call me</a>
+        </p>
+    </section>
+    <!-- Back to Top Button -->
+    <a href="#top" class="back-to-top-btn" id="backToTopBtn" aria-label="Back to Top">
+        <svg width="50" height="50" viewBox="0 0 28 28" fill="none">
+            <circle cx="14" cy="14" r="13" fill="#fff" stroke="#1976d2" stroke-width="2"/>
+            <polyline points="9,16 14,11 19,16" fill="none" stroke="#1976d2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </a>
+
+        <section id="contact" class="contact-section">
+        
+        <h2 class="section-title contact-title">Location</h2>
+        <p class="contact-item">
+            <img src="https://cdn-icons-png.flaticon.com/24/684/684908.png" alt="Location Icon" width="20" height="20">
+            <strong>Location:</strong> San Pedro Garza García, Nuevo León, México
+            <a class="contact-link" href="https://maps.app.goo.gl/Z9TRzVUrZHV2DqJk6">See on google maps</a>
+    
+     <section class="download-section">
+        <div >
+
+<a href="cv/Raul-Rodriguez-Ruiz-CV-25-ENGLISH.pdf" download class="btn-download-contact">Download  CV
+    <img src="https://cdn.jsdelivr.net/gh/hjnilsson/country-flags/svg/us.svg" alt="USA Flag" width="22" height="16" style="vertical-align:middle; margin-left:6px;">
+    </a>
+<a href="cv/Raul-Rodriguez-Ruiz-CV-25-ESPANOL.pdf" download class="btn-download-contact">Descargar CV
+    <img src="https://cdn.jsdelivr.net/gh/hjnilsson/country-flags/svg/mx.svg" alt="Mexico Flag" width="22" height="16" style="vertical-align:middle; margin-left:6px;">
+    </a>
+
+        </div>
+    </section>
+    <p class="footer-text">&copy; 2025 Raúl Rodríguez Ruiz. All rights reserved.</p>
+   
+</footer>
+</body>
+</html>
