@@ -7,9 +7,34 @@
     <link rel="stylesheet" href="styles.css" />
     <link type="image/png" href="download icon/favicon.png" rel="icon" />
     <script src="style.js"></script>
+    <script src="translate.js" defer></script>
     <meta name="color-scheme" content="light dark" />
 </head>
 <body>
+    <div style="position: fixed; top: 1rem; right: 1rem; z-index: 1000;">
+    <button onclick="toggleLanguage()" id="langToggleBtn" data-lang="en" style="padding: 0.5rem 1rem; background-color: #1976d2; color: white; border: none; border-radius: 0.5rem; cursor: pointer; font-size: 1rem; box-shadow: 0 2px 8px rgba(25,118,210,0.10); transition: background 0.2s; position: fixed; bottom: 1rem; left: 1rem; z-index: 1000;">
+        🇪🇸 ES
+    </button>
+    <style>
+        @media (max-width: 400px) {
+            #langToggleBtn {
+                font-size: 0.98rem !important;
+                padding: 0.45rem 0.8rem !important;
+                border-radius: 0.45rem !important;
+                min-width: 140px;
+                width: 100%;
+                box-sizing: border-box;
+            }
+        }
+        #langToggleBtn {
+            position: fixed;
+            bottom: 1rem;
+            left: 1rem;
+            z-index: 1000;
+        }
+    </style>
+      </button>
+    </div>
     <header>
         <h1>Raúl Rodríguez Ruiz</h1>
           <p>Business Analyst | Business Management Engineer | Web dev beginner</p>
@@ -105,56 +130,66 @@
         </div>
 
 </section>
-   <footer>
-    <section id="contact" class="contact-section">
-        
-        <h2 class="section-title contact-title">Contact</h2>
-        <p class="contact-item">
-            <img src="https://cdn-icons-png.flaticon.com/24/732/732200.png" alt="Email Icon" width="20" height="20">
-            <strong>Email:</strong> raulrdzr98@gmail.com
-            <a class="contact-link" href="mailto:raulrdzr98@gmail.com?subject=%5BYour%20Company%5D%20Job%20Opportunity&body=Hello%20Ra%C3%BAl%20!%0A%0A%0ARegards,%0A[Your%20Name]">Send me an email</a>
-        </p>
-        <p class="contact-item">
-            <img src="https://cdn-icons-png.flaticon.com/24/174/174857.png" alt="LinkedIn Icon" width="20" height="20">
-            <strong>LinkedIn:</strong> https://www.linkedin.com/in/raulrdz98/
-            <a class="contact-link" href="https://www.linkedin.com/in/raulrdz98/" target="_blank">Visit my LinkedIn</a>
-        </p>
-        <p class="contact-item">
-            <img class="white-icon" src="https://cdn-icons-png.flaticon.com/24/597/597177.png" alt="Phone Icon" width="20" height="20">
-            <strong>Phone:</strong> +52 8114148191
-            <a class="contact-link" href="tel:+528114148191">Call me</a>
-        </p>
-    </section>
-    <!-- Back to Top Button -->
-    <a href="#top" class="back-to-top-btn" id="backToTopBtn" aria-label="Back to Top">
-        <svg width="50" height="50" viewBox="0 0 28 28" fill="none">
-            <circle cx="14" cy="14" r="13" fill="#fff" stroke="#1976d2" stroke-width="2"/>
-            <polyline points="9,16 14,11 19,16" fill="none" stroke="#1976d2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-    </a>
+<footer>
+  <section id="contact" class="contact-section">
+    <h2 class="section-title contact-title">Contact</h2>
+    <p class="contact-item">
+      <img src="https://cdn-icons-png.flaticon.com/24/732/732200.png" alt="Email Icon" width="25" height="25">
+      <strong>Email:</strong> raulrdzr98@gmail.com
+      <a class="contact-link" href="mailto:raulrdzr98@gmail.com?subject=%5BYour%20Company%5D%20Job%20Opportunity&body=Hello%20Ra%C3%BAl%20!%0A%0A%0ARegards,%0A[Your%20Name]">Send me an email</a>
+    </p>
+    <p class="contact-item">
+      <img src="https://cdn-icons-png.flaticon.com/24/174/174857.png" alt="LinkedIn Icon" width="25" height="25">
+      <strong>LinkedIn:</strong> https://www.linkedin.com/in/raulrdz98/
+      <a class="contact-link" href="https://www.linkedin.com/in/raulrdz98/" target="_blank">Visit my LinkedIn</a>
+    </p>
+    <p class="contact-item">
+      <img class="white-icon" src="https://cdn-icons-png.flaticon.com/24/597/597177.png" alt="Phone Icon" width="25" height="25">
+      <strong>Phone:</strong> +52 8114148191
+      <a class="contact-link" href="tel:+528114148191">Call me</a>
+    </p>
+    <p class="contact-item">
+      <img src="https://cdn-icons-png.flaticon.com/128/733/733585.png" alt="WhatsApp Icon" width="25" height="25">
+      <strong>Whatsapp:</strong> +52 8114148191
+       <a class="contact-link" href="https://wa.me/528114148191" target="_blank">Send me a WhatsApp</a>
+    </p>
+  
+  </section>
+  <!-- Back to Top Button -->
+  <a href="#top" class="back-to-top-btn" id="backToTopBtn" aria-label="Back to Top">
+    <svg width="50" height="50" viewBox="0 0 28 28" fill="none">
+      <circle cx="14" cy="14" r="13" fill="#fff" stroke="#1976d2" stroke-width="2"/>
+      <polyline points="9,16 14,11 19,16" fill="none" stroke="#1976d2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
 
-        <section id="contact" class="contact-section">
-        
-        <h2 class="section-title contact-title">Location</h2>
-        <p class="contact-item">
-            <img src="https://cdn-icons-png.flaticon.com/24/684/684908.png" alt="Location Icon" width="20" height="20">
-            <strong>Location:</strong> San Pedro Garza García, Nuevo León, México
-            <a class="contact-link" href="https://maps.app.goo.gl/Z9TRzVUrZHV2DqJk6">See on google maps</a>
-    
-     <section class="download-section">
-        <div >
+  <section id="location" class="contact-section">
+    <h2 class="section-title contact-title" style="text-align:center;">Location</h2>
+    <div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 1.5rem;">
+      <p class="contact-item" style="display: flex; align-items: center; gap: 10px; justify-content: center; margin: 0;">
+        <span style="text-align: center;">
+          <strong>San Pedro Garza García, Nuevo León, México</strong>
+          <br>
+          <a class="contact-link" href="https://maps.app.goo.gl/Z9TRzVUrZHV2DqJk6" target="_blank" style="display: inline-flex; align-items: center; gap: 4px;">
+            <img src="https://cdn-icons-png.flaticon.com/24/684/684908.png" alt="Google Maps" width="18" height="18" style="vertical-align:middle;">
+            See on Google Maps
+          </a>
+        </span>
+      </p>
+    </div>
+  </section>
 
-<a href="cv/Raul-Rodriguez-Ruiz-CV-25-ENGLISH.pdf" download class="btn-download-contact">Download  CV
-    <img src="https://cdn.jsdelivr.net/gh/hjnilsson/country-flags/svg/us.svg" alt="USA Flag" width="22" height="16" style="vertical-align:middle; margin-left:6px;">
-    </a>
-<a href="cv/Raul-Rodriguez-Ruiz-CV-25-ESPANOL.pdf" download class="btn-download-contact">Descargar CV
-    <img src="https://cdn.jsdelivr.net/gh/hjnilsson/country-flags/svg/mx.svg" alt="Mexico Flag" width="22" height="16" style="vertical-align:middle; margin-left:6px;">
-    </a>
-
-        </div>
-    </section>
-    <p class="footer-text">&copy; 2025 Raúl Rodríguez Ruiz. All rights reserved.</p>
-   
+  <section class="download-section">
+    <div style="text-align: center;">
+      <a href="cv/Raul-Rodriguez-Ruiz-CV-25-ENGLISH.pdf" download class="btn-download-contact">Download  CV
+        <img src="https://cdn.jsdelivr.net/gh/hjnilsson/country-flags/svg/us.svg" alt="USA Flag" width="22" height="16" style="vertical-align:middle; margin-left:6px;">
+      </a>
+      <a href="cv/Raul-Rodriguez-Ruiz-CV-25-ESPANOL.pdf" download class="btn-download-contact">Descargar CV
+        <img src="https://cdn.jsdelivr.net/gh/hjnilsson/country-flags/svg/mx.svg" alt="Mexico Flag" width="22" height="16" style="vertical-align:middle; margin-left:6px;">
+      </a>
+    </div>
+  </section>
+  <p class="footer-text" style="text-align: center;">&copy; 2025 Raúl Rodríguez Ruiz. All rights reserved.</p>
 </footer>
 </body>
 </html>
