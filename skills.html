@@ -26,64 +26,38 @@
       width: 20px;
       height: 20px;
     }
-    /* Mobile navigation styles */
-    .mobile-nav-toggle {
-      display: none;
-      background: #1976d2;
+  </style>
+  
+</head>
+
+<body>
+  <div class="lang-btn-container">
+    <button onclick="toggleLanguage()" id="langToggleBtn" data-lang="en">
+      🇲🇽 ES
+    </button>
+  </div>
+  <style>
+    .lang-btn-container {
+      position: fixed;
+      bottom: 1rem;
+      left: 1rem;
+      z-index: 1000;
+      width: auto;
+      max-width: 90vw;
+    }
+    #langToggleBtn {
+      width: auto;
+      min-width: 36px;
+      font-size: 1rem;
+      padding: 0.38rem 0.9rem;
+      border-radius: 0.38rem;
+      background-color: #1976d2;
+      color: white;
       border: none;
-      font-size: 2.2rem;
-      position: absolute;
-      top: 1.2rem;
-      right: 1.2rem;
-      z-index: 2001;
-      color: #fff;
       cursor: pointer;
-      border-radius: 50%;
-      box-shadow: 0 2px 8px rgba(25,118,210,0.18);
-      width: 48px;
-      height: 48px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      box-shadow: 0 2px 8px rgba(25,118,210,0.10);
       transition: background 0.2s;
-    }
-    .mobile-nav-toggle:hover,
-    .mobile-nav-toggle:focus {
-      background: #1253a2;
-      outline: none;
-    }
-    nav ul {
-      display: flex;
-      gap: 1.2rem;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    @media (max-width: 700px) {
-      .mobile-nav-toggle {
-        display: flex;
-      }
-      nav ul {
-        flex-direction: column;
-        position: fixed;
-        top: 0;
-        right: -100vw;
-        width: 70vw;
-        max-width: 320px;
-        height: 100vh;
-        background: #fff;
-        box-shadow: -2px 0 12px rgba(25,118,210,0.12);
-        padding: 4rem 1.5rem 2rem 1.5rem;
-        gap: 1.5rem;
-        transition: right 0.3s cubic-bezier(.4,0,.2,1);
-        z-index: 2000;
-      }
-      nav ul.open {
-        right: 0;
-      }
-      nav {
-        position: relative;
-      }
+      font-family: inherit;
     }
     @media (max-width: 400px) {
       #langToggleBtn {
@@ -93,78 +67,114 @@
         width: auto;
       }
     }
-    /* Restore translate button to original style */
-    .lang-btn-container {
-      position: absolute;
-      top: 1.2rem;
-      left: 1.2rem;
-      z-index: 2100;
-    }
-    #langToggleBtn {
-      background: #fff;
-      color: #1976d2;
-      border: 2px solid #1976d2;
-      border-radius: 24px;
-      font-size: 1.08rem;
-      padding: 0.38rem 1.1rem;
-      cursor: pointer;
-      font-weight: 600;
-      box-shadow: 0 2px 8px rgba(25,118,210,0.10);
-      transition: background 0.2s, color 0.2s, border 0.2s;
-      min-width: 44px;
-    }
-    #langToggleBtn:hover,
-    #langToggleBtn:focus {
-      background: #1976d2;
-      color: #fff;
-      outline: none;
-    }
   </style>
-</head>
-
-<body>
-  <div class="lang-btn-container">
-    <button onclick="toggleLanguage()" id="langToggleBtn" data-lang="en">
-      🇲🇽 ES
     </button>
   </div>
   <header>
     <h1>Raúl Rodríguez Ruiz</h1>
     <p>Business Analyst | Business Management Engineer | Web dev beginner</p>
-    <button class="mobile-nav-toggle" aria-label="Open navigation" onclick="toggleMobileNav()">
-      &#9776;
-    </button>
-    <nav>
-      <ul id="mainNav">
-        <li class="section-menu"><a href="index.html">Home</a></li>
-        <li class="section-menu active"><a href="skills.html">Skills</a></li>
-        <li class="section-menu"><a href="projects.html">Projects</a></li>
-        <li class="section-menu"><a href="experience.html">Job Experience</a></li>
-        <li class="section-menu"><a href="education.html">Education</a></li>
-        <li class="section-menu"><a href="#contact">Contact</a></li>
+    <nav class="main-nav">
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Open navigation menu">
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+      </label>
+      <ul>
+      <li class="section-menu"><a href="index.html">Home</a></li>
+      <li class="section-menu active"><a href="skills.html">Skills</a></li>
+      <li class="section-menu"><a href="projects.html">Projects</a></li>
+      <li class="section-menu"><a href="experience.html">Job Experience</a></li>
+      <li class="section-menu"><a href="education.html">Education</a></li>
+      <li class="section-menu"><a href="#contact">Contact</a></li>
       </ul>
-    </nav>
-    <script>
-      function toggleMobileNav() {
-        var nav = document.getElementById('mainNav');
-        nav.classList.toggle('open');
+      <style>
+      .main-nav {
+        position: relative;
       }
-      // Optional: Close nav when clicking outside or on a link (mobile)
-      document.addEventListener('click', function(e) {
-        var nav = document.getElementById('mainNav');
-        var toggle = document.querySelector('.mobile-nav-toggle');
-        if (
-          nav.classList.contains('open') &&
-          !nav.contains(e.target) &&
-          !toggle.contains(e.target)
-        ) {
-          nav.classList.remove('open');
+      .nav-toggle {
+        display: none;
+      }
+      .nav-toggle-label {
+        display: none;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 36px;
+        height: 36px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        z-index: 2001;
+      }
+      .nav-toggle-label span {
+        display: block;
+        width: 28px;
+        height: 4px;
+        margin: 5px 0;
+        background: #1976d2;
+        border-radius: 2px;
+        transition: 0.3s;
+      }
+      nav ul {
+        display: flex;
+        gap: 1.5rem;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      nav ul li a {
+        text-decoration: none;
+        color: #1976d2;
+        font-weight: 500;
+        padding: 0.5rem 0.8rem;
+        border-radius: 0.3rem;
+        transition: background 0.2s, color 0.2s;
+      }
+      nav ul li.active a,
+      nav ul li a:hover {
+        background: #1976d2;
+        color: #fff;
+      }
+      @media (max-width: 700px) {
+        .nav-toggle-label {
+        display: flex;
         }
-        if (e.target.tagName === 'A' && nav.classList.contains('open')) {
-          nav.classList.remove('open');
+        nav ul {
+        position: absolute;
+        top: 48px;
+        right: 0;
+        background: #fff;
+        flex-direction: column;
+        width: 180px;
+        box-shadow: 0 2px 12px rgba(25,118,210,0.08);
+        border-radius: 0 0 8px 8px;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.3s;
+        z-index: 2000;
         }
-      });
-    </script>
+        .nav-toggle:checked + .nav-toggle-label + ul {
+        max-height: 400px;
+        border: 1px solid #1976d2;
+        }
+        nav ul li {
+        margin: 0;
+        border-bottom: 1px solid #eee;
+        }
+        nav ul li:last-child {
+        border-bottom: none;
+        }
+        nav ul li a {
+        display: block;
+        padding: 1rem;
+        color: #1976d2;
+        background: #fff;
+        }
+      }
+      </style>
+    </nav>
   </header>
 
   <section id="skills">
