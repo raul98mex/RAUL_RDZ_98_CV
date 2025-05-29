@@ -383,8 +383,10 @@ html {
         transition: background-color 0.3s ease;
     }
     .btn-download:hover {
-        background-color: #eaf4ff;
-        cursor: pointer;
+      background-color: #eaf4ff;
+      cursor: pointer;
+      transform: scale(1.07);
+      transition: transform 0.2s, background-color 0.3s;
     }
     .btn-download svg {
         width: 20px;
