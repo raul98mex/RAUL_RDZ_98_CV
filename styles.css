@@ -302,41 +302,74 @@ footer {
 }
 
 
-        html {
-            scroll-behavior: smooth;
-        }
-        .back-to-top-btn {
-            position: fixed;
-            bottom: 32px;
-            right: 32px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 56px;
-            height: 56px;
-            background: transparent;
-            border: none;
-            border-radius: 50%;
-            box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
-            cursor: pointer;
-            z-index: 1000;
-            transition: box-shadow 0.2s;
-            text-decoration: none;
-        }
-        .back-to-top-btn:hover {
-            box-shadow: 0 4px 16px rgba(25, 118, 210, 0.18);
-        }
-        .back-to-top-btn svg {
-            display: block;
-        }
-        @media (max-width: 600px) {
-            .back-to-top-btn {
-                right: 16px;
-                bottom: 16px;
-                width: 48px;
-                height: 48px;
-            }
-        }
+html {
+  scroll-behavior: smooth;
+}
+.back-to-top-btn {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 2.5rem;
+  z-index: 1200;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 4px 16px rgba(25, 118, 210, 0.13);
+  transition: box-shadow 0.2s, transform 0.2s;
+  padding: 0;
+  width: 48px;
+  height: 48px;
+  opacity: 0.92;
+}
+
+.back-to-top-btn:focus,
+.back-to-top-btn:hover {
+  box-shadow: 0 6px 24px rgba(25, 118, 210, 0.22);
+  transform: translateY(-2px) scale(1.06);
+  opacity: 1;
+}
+
+.back-to-top-circle {
+  fill: #fff;
+  stroke: #1976d2;
+  transition: fill 0.2s, stroke 0.2s;
+}
+
+.back-to-top-arrow {
+  stroke: #1976d2;
+  transition: stroke 0.2s;
+}
+
+@media (prefers-color-scheme: dark) {
+  .back-to-top-circle {
+    fill: #23272f;
+    stroke: #90caf9;
+  }
+  .back-to-top-arrow {
+    stroke: #90caf9;
+  }
+  .back-to-top-btn {
+    box-shadow: 0 4px 16px rgba(144, 202, 249, 0.13);
+  }
+  .back-to-top-btn:focus,
+  .back-to-top-btn:hover {
+    box-shadow: 0 6px 24px rgba(144, 202, 249, 0.22);
+  }
+}
+
+@media (max-width: 600px) {
+  .back-to-top-btn {
+    right: 1rem;
+    bottom: 1.5rem;
+    width: 40px;
+    height: 40px;
+  }
+  .back-to-top-btn svg {
+    width: 40px;
+    height: 40px;
+  }
+}
     
     .btn-download {
         display: inline-block;

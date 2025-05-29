@@ -84,26 +84,19 @@ function setActiveControl(type, section = 'skills') {
   if (btn) btn.classList.add('active-control');
 }
 
-// Hide button when at the top, show when scrolled down
-document.addEventListener('DOMContentLoaded', function() {
-    const backToTopBtn = document.getElementById('backToTopBtn');
-    if (!backToTopBtn) return;
+// Show/hide back-to-top button on scroll
+window.addEventListener('scroll', function() {
+  const btn = document.getElementById('backToTopBtn');
+  if (window.scrollY > 300) {
+    btn.style.display = 'block';
+  } else {
+    btn.style.display = 'none';
+  }
+});
 
-    // Hide initially
-    backToTopBtn.style.display = 'none';
-
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 200) {
-            backToTopBtn.style.display = 'flex';
-        } else {
-            backToTopBtn.style.display = 'none';
-        }
-    });
-
-    // Smooth scroll to top
-    backToTopBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+// Smooth scroll to top
+document.getElementById('backToTopBtn').addEventListener('click', function(e) {
+  e.preventDefault();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
