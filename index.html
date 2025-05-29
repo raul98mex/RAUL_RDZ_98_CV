@@ -10,28 +10,43 @@
     <script src="translate.js" defer></script>
 </head>
 <body>
-    <div style="position: fixed; top: 1rem; right: 1rem; z-index: 1000;">
-    <button onclick="toggleLanguage()" id="langToggleBtn" data-lang="en" style="padding: 0.5rem 1rem; background-color: #1976d2; color: white; border: none; border-radius: 0.5rem; cursor: pointer; font-size: 1rem; box-shadow: 0 2px 8px rgba(25,118,210,0.10); transition: background 0.2s; position: fixed; bottom: 1rem; left: 1rem; z-index: 1000;">
-        🇪🇸 ES
+  <div class="lang-btn-container">
+    <button onclick="toggleLanguage()" id="langToggleBtn" data-lang="en">
+      🇲🇽 ES
     </button>
-    <style>
-        @media (max-width: 400px) {
-            #langToggleBtn {
-                font-size: 0.98rem !important;
-                padding: 0.45rem 0.8rem !important;
-                border-radius: 0.45rem !important;
-                min-width: 140px;
-                width: 100%;
-                box-sizing: border-box;
-            }
-        }
-        #langToggleBtn {
-            position: fixed;
-            bottom: 1rem;
-            left: 1rem;
-            z-index: 1000;
-        }
-    </style>
+  </div>
+  <style>
+    .lang-btn-container {
+      position: fixed;
+      bottom: 1rem;
+      left: 1rem;
+      z-index: 1000;
+      width: auto;
+      max-width: 90vw;
+    }
+    #langToggleBtn {
+      width: auto;
+      min-width: 36px;
+      font-size: 1rem;
+      padding: 0.38rem 0.9rem;
+      border-radius: 0.38rem;
+      background-color: #1976d2;
+      color: white;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(25,118,210,0.10);
+      transition: background 0.2s;
+      font-family: inherit;
+    }
+    @media (max-width: 400px) {
+      #langToggleBtn {
+        font-size: 0.98rem;
+        padding: 0.32rem 0.7rem;
+        min-width: 36px;
+        width: auto;
+      }
+    }
+  </style>
 
         
     </style>
@@ -55,7 +70,7 @@
     <section>
         <div class="cv-buttons" style="display: flex; justify-content: center; gap: 24px; margin: 24px 0;">
             <a href="cv/Raul-Rodriguez-Ruiz-CV-25-ENGLISH.pdf" download class="btn-download">
-                Download CV
+                Download  CV
                 <img src="https://cdn.jsdelivr.net/gh/hjnilsson/country-flags/svg/us.svg" alt="USA Flag" width="22" height="16" style="vertical-align:middle; margin-left:6px;">
                 <img src="download icon/download.png" alt="Download Icon" width="20" height="20" style="vertical-align:middle; margin-right:6px; filter: invert(32%) sepia(99%) saturate(7497%) hue-rotate(202deg) brightness(97%) contrast(101%);">
             </a>
