@@ -122,7 +122,7 @@
           top: 110%;
           left: 0;
           right: 0;
-          background: #1976d2;
+          background: #fff;
           box-shadow: 0 8px 24px rgba(25,118,210,0.13);
           border-radius: 0.5rem;
           z-index: 1100;
@@ -137,13 +137,13 @@
         #navMenu li {
           margin: 0;
           padding: 0.5rem 1.2rem;
-          border-bottom: 1px solid #1565c0;
+          border-bottom: 1px solid #e3f2fd;
         }
         #navMenu li:last-child {
           border-bottom: none;
         }
         #navMenu a {
-          color: #fff;
+          color: #1976d2;
           text-decoration: none;
           font-size: 1.05rem;
           display: block;
@@ -151,17 +151,39 @@
         }
         #navMenu a:hover,
         #navMenu a:focus {
-          background: #1565c0;
-          color: #fff;
+          background: #e3f2fd;
+          color: #1976d2;
         }
         #navMenu .active a {
           font-weight: bold;
-          background: #0d47a1;
-          color: #fff;
+          background: #bbdefb;
+          color: #1976d2;
         }
         @keyframes fadeInMenu {
           from { opacity: 0; transform: translateY(-10px);}
           to { opacity: 1; transform: translateY(0);}
+        }
+        @media (prefers-color-scheme: dark) {
+          #navMenu {
+            background: #23272f;
+            box-shadow: 0 8px 24px rgba(30,30,30,0.13);
+          }
+          #navMenu li {
+            border-bottom: 1px solid #444a58;
+          }
+          #navMenu a {
+            color: #e3f2fd;
+          }
+          #navMenu a:hover,
+          #navMenu a:focus {
+            background: #353a45;
+            color: #90caf9;
+          }
+          #navMenu .active a {
+            font-weight: bold;
+            background: #353a45;
+            color: #90caf9;
+          }
         }
       }
       @media (min-width: 801px) {
@@ -183,7 +205,7 @@
           border: none;
         }
         #navMenu a {
-          color: #1976d2;
+          color: #111;
           font-size: 1.05rem;
           text-decoration: none;
           transition: color 0.2s, background 0.2s;
@@ -199,6 +221,20 @@
           color: #0d47a1;
           background: #bbdefb;
           border-radius: 0.3rem;
+        }
+        @media (prefers-color-scheme: dark) {
+          #navMenu a {
+            color: #fff;
+          }
+          #navMenu a:hover,
+          #navMenu a:focus {
+            color: #90caf9;
+            background: #353a45;
+          }
+          #navMenu .active a {
+            color: #90caf9;
+            background: #353a45;
+          }
         }
       }
     </style>
