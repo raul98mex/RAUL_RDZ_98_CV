@@ -360,6 +360,11 @@
         flex-direction: column;
         align-items: center;
     }
+    @media (prefers-color-scheme: dark) {
+        .image-card {
+            background: #23272f;
+        }
+    }
     .profile-image {
         display: block;
         width: 100%;
@@ -387,6 +392,12 @@
         color: #555;
         font-size: 0.95em;
     }
+    @media (prefers-color-scheme: dark) {
+        .image-card-desc {
+            color: #cfd8dc;
+        }
+    }
+ 
     @media (max-width: 900px) {
         .image-section {
             gap: 20px;
