@@ -106,3 +106,58 @@ document.addEventListener('DOMContentLoaded', function() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 });
+
+// Smooth scroll for internal links
+      document.addEventListener('DOMContentLoaded', function() {
+        var menuToggle = document.getElementById('menuToggle');
+        var navMenu = document.getElementById('navMenu');
+        var wrapper = document.getElementById('menuDropdownWrapper');
+        function isMobile() {
+          return window.innerWidth <= 700;
+        }
+        function closeMenu() {
+          navMenu.classList.remove('show');
+          wrapper.classList.remove('open');
+        }
+        if (menuToggle && navMenu && wrapper) {
+          menuToggle.addEventListener('click', function(e) {
+        if (isMobile()) {
+          if (!navMenu.classList.contains('show')) {
+            // Open: set display, force reflow, then add .show for animation
+            navMenu.style.display = 'flex';
+            void navMenu.offsetHeight;
+            navMenu.classList.add('show');
+            wrapper.classList.add('open');
+          } else {
+            // Close: remove .show, then after transition, hide display
+            navMenu.classList.remove('show');
+            wrapper.classList.remove('open');
+            setTimeout(function() {
+          if (!navMenu.classList.contains('show')) {
+            navMenu.style.display = '';
+          }
+            }, 500);
+          }
+          e.stopPropagation();
+        }
+          });
+          // Hide menu when clicking outside (only on mobile)
+          document.addEventListener('click', function(e) {
+        if (
+          isMobile() &&
+          !menuToggle.contains(e.target) &&
+          !navMenu.contains(e.target)
+        ) {
+          closeMenu();
+          navMenu.style.display = '';
+        }
+          });
+          // Close menu on resize to desktop
+          window.addEventListener('resize', function() {
+        if (!isMobile()) {
+          closeMenu();
+          navMenu.style.display = '';
+        }
+          });
+        }
+      });
