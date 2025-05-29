@@ -74,132 +74,174 @@
     <h1>Raúl Rodríguez Ruiz</h1>
     <p>Business Analyst | Business Management Engineer | Web dev beginner</p>
     <nav>
-      <button id="menuToggle" aria-label="Open menu">
-      &#9776; Menu
-      </button>
-      <ul id="navMenu">
-      <li class="section-menu"><a href="index.html">Home</a></li>
-      <li class="section-menu active"><a href="skills.html">Skills</a></li>
-      <li class="section-menu"><a href="projects.html">Projects</a></li>
-      <li class="section-menu"><a href="experience.html">Job Experience</a></li>
-      <li class="section-menu"><a href="education.html">Education</a></li>
-      <li class="section-menu"><a href="#contact">Contact</a></li>
-      </ul>
+      <div id="menuDropdownWrapper">
+        <button id="menuToggle" aria-label="Open menu">
+          &#9776; Menu
+        </button>
+        <ul id="navMenu">
+          <li class="section-menu"><a href="index.html">Home</a></li>
+          <li class="section-menu active"><a href="skills.html">Skills</a></li>
+          <li class="section-menu"><a href="projects.html">Projects</a></li>
+          <li class="section-menu"><a href="experience.html">Job Experience</a></li>
+          <li class="section-menu"><a href="education.html">Education</a></li>
+          <li class="section-menu"><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
     </nav>
     <style>
       nav {
-      position: relative;
+        position: relative;
+      }
+      #menuDropdownWrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        position: relative;
       }
       nav ul#navMenu {
-      transition: max-height 0.35s cubic-bezier(.4,0,.2,1), opacity 0.25s;
-      overflow: hidden;
-      max-height: 1000px;
-      opacity: 1;
-      padding-top: 0;
+        transition: max-height 0.35s cubic-bezier(.4,0,.2,1), opacity 0.25s;
+        overflow: hidden;
+        max-height: 1000px;
+        opacity: 1;
+        padding-top: 0;
       }
       nav ul#navMenu:not(.show) {
-      max-height: 0;
-      opacity: 0;
-      padding-top: 0;
-      pointer-events: none;
+        max-height: 0;
+        opacity: 0;
+        padding-top: 0;
+        pointer-events: none;
       }
       @media (max-width: 700px) {
-      nav ul#navMenu {
-      display: flex;
-      flex-direction: column;
-      background: var(--menu-bg, #fff);
-      color: var(--menu-color, #222);
-      position: absolute;
-      top: 60px;
-      left: 10px;
-      right: 10px;
-      box-shadow: 0 2px 16px rgba(0,0,0,0.10);
-      border-radius: 12px;
-      z-index: 1001;
-      padding-top: 1.2rem;
-      }
-      nav ul#navMenu:not(.show) {
-      display: flex;
-      }
-      nav #menuToggle {
-      display: inline-block;
-      background: #1976d2;
-      color: #fff;
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-      cursor: pointer;
-      margin-top: 1.2rem; /* Lower the button for mobile */
-      }
-      nav ul#navMenu li.section-menu a {
-      color: inherit;
-      padding: 0.7rem 1.2rem;
-      text-decoration: none;
-      display: block;
-      border-radius: 6px;
-      transition: background 0.4s;
-      }
-      nav ul#navMenu li.section-menu a:hover,
-      nav ul#navMenu li.section-menu.active a {
-      background: var(--menu-hover, #e3eafc);
-      }
+        #menuDropdownWrapper {
+          width: 100%;
+          position: relative;
+        }
+        nav #menuToggle {
+          display: inline-block;
+          background: #1976d2;
+          color: #fff;
+          border: none;
+          padding: 0.5rem 1rem;
+          border-radius: 6px;
+          font-size: 1.2rem;
+          margin-bottom: 0;
+          cursor: pointer;
+          margin-top: 1.2rem; /* Lower the button for mobile */
+          width: 100%;
+          text-align: left;
+          z-index: 1002;
+          position: relative;
+          transition: border-radius 0.3s;
+        }
+        nav ul#navMenu {
+          display: flex;
+          flex-direction: column;
+          background: var(--menu-bg, #fff);
+          color: var(--menu-color, #222);
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+          border-radius: 0 0 12px 12px;
+          z-index: 1001;
+          padding-top: 3.2rem;
+          margin-top: 0;
+          width: 100%;
+        }
+        nav ul#navMenu:not(.show) {
+          display: flex;
+        }
+        nav ul#navMenu.show {
+          animation: dropdownFadeIn 0.35s cubic-bezier(.4,0,.2,1);
+        }
+        @keyframes dropdownFadeIn {
+          from { opacity: 0; transform: translateY(-10px);}
+          to { opacity: 1; transform: translateY(0);}
+        }
+        nav ul#navMenu li.section-menu a {
+          color: inherit;
+          padding: 0.7rem 1.2rem;
+          text-decoration: none;
+          display: block;
+          border-radius: 6px;
+          transition: background 0.4s;
+        }
+        nav ul#navMenu li.section-menu a:hover,
+        nav ul#navMenu li.section-menu.active a {
+          background: var(--menu-hover, #e3eafc);
+        }
+        /* Make button and menu look like one piece when open */
+        #menuDropdownWrapper.open #menuToggle {
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+        #menuDropdownWrapper:not(.open) #menuToggle {
+          border-radius: 6px;
+        }
       }
       @media (min-width: 701px) {
-      nav #menuToggle {
-      display: none !important;
-      }
-      nav ul#navMenu {
-      display: flex !important;
-      flex-direction: row;
-      position: static;
-      box-shadow: none;
-      background: none;
-      color: inherit;
-      max-height: none !important;
-      opacity: 1 !important;
-      padding-top: 0 !important;
-      }
-      nav ul#navMenu li.section-menu a {
-      padding: 0.5rem 1.2rem;
-      }
+        nav #menuToggle {
+          display: none !important;
+        }
+        nav ul#navMenu {
+          display: flex !important;
+          flex-direction: row;
+          position: static;
+          box-shadow: none;
+          background: none;
+          color: inherit;
+          max-height: none !important;
+          opacity: 1 !important;
+          padding-top: 0 !important;
+        }
+        nav ul#navMenu li.section-menu a {
+          padding: 0.5rem 1.2rem;
+        }
+        #menuDropdownWrapper {
+          flex-direction: row;
+          align-items: center;
+        }
       }
       /* Light/Dark mode support */
       @media (prefers-color-scheme: dark) {
-      nav ul#navMenu {
-      --menu-bg: #23272f;
-      --menu-color: #f3f6fa;
-      --menu-hover: #2d3642;
-      }
+        nav ul#navMenu {
+          --menu-bg: #23272f;
+          --menu-color: #f3f6fa;
+          --menu-hover: #2d3642;
+        }
       }
       @media (prefers-color-scheme: light) {
-      nav ul#navMenu {
-      --menu-bg: #fff;
-      --menu-color: #222;
-      --menu-hover: #e3eafc;
-      }
+        nav ul#navMenu {
+          --menu-bg: #fff;
+          --menu-color: #222;
+          --menu-hover: #e3eafc;
+        }
       }
     </style>
     <script>
       document.addEventListener('DOMContentLoaded', function() {
-      var menuToggle = document.getElementById('menuToggle');
-      var navMenu = document.getElementById('navMenu');
-      if (menuToggle && navMenu) {
-      menuToggle.addEventListener('click', function() {
-      navMenu.classList.toggle('show');
-      });
-      // Hide menu when clicking outside
-      document.addEventListener('click', function(e) {
-      if (
-        window.innerWidth <= 700 &&
-        !menuToggle.contains(e.target) &&
-        !navMenu.contains(e.target)
-      ) {
-        navMenu.classList.remove('show');
-      }
-      });
-      }
+        var menuToggle = document.getElementById('menuToggle');
+        var navMenu = document.getElementById('navMenu');
+        var wrapper = document.getElementById('menuDropdownWrapper');
+        if (menuToggle && navMenu && wrapper) {
+          menuToggle.addEventListener('click', function(e) {
+            navMenu.classList.toggle('show');
+            wrapper.classList.toggle('open', navMenu.classList.contains('show'));
+          });
+          // Hide menu when clicking outside
+          document.addEventListener('click', function(e) {
+            if (
+              window.innerWidth <= 700 &&
+              !menuToggle.contains(e.target) &&
+              !navMenu.contains(e.target)
+            ) {
+              navMenu.classList.remove('show');
+              wrapper.classList.remove('open');
+            }
+          });
+        }
       });
     </script>
   </header>
