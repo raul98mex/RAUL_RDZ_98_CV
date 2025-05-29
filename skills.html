@@ -80,140 +80,150 @@
         &#9776; Menu
       </button>
       <style>
-            #menuDropdownWrapper {
-              position: relative;
-              max-width: 100vw;
-              margin: 0 auto;
-              width: 100%;
-              display: flex;
-              justify-content: center;
-            }
-            #menuToggle {
-              margin-right: 0;
-              padding: 0.5rem 1.2rem;
-              font-size: 1.1rem;
-              border: none;
-              border-radius: 0.38rem 0.38rem 0 0;
-              background: #1976d2;
-              color: #fff;
-              cursor: pointer;
-              box-shadow: 0 2px 8px rgba(25,118,210,0.10);
-              transition: background 0.2s;
-              align-items: center;
-              gap: 0.5rem;
-              width: 70vw;
-              max-width: 70vw;
-              display: none;
-            }
-            @media (prefers-color-scheme: dark) {
-              #menuToggle {
-                background: #222e3a;
-                color: #fff;
-                box-shadow: 0 2px 8px rgba(25,118,210,0.20);
-              }
-            }
-            @media (max-width: 768px) {
-              #menuToggle {
-                display: inline-flex;
-                width: 70vw !important;
-                max-width: 70vw !important;
-                border-radius: 0.38rem 0.38rem 0 0;
-              }
-              #navMenu {
-                display: none;
-                flex-direction: column;
-                background: #fff;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 70vw !important;
-                max-width: 70vw !important;
-                z-index: 100;
-                box-shadow: 0 4px 16px rgba(25,118,210,0.08);
-                margin: 0;
-                overflow: hidden;
-                max-height: 0;
-                transition: max-height 0.35s cubic-bezier(0.4,0,0.2,1);
-                border-radius: 0 0 0.38rem 0.38rem;
-              }
-              @media (prefers-color-scheme: dark) {
-                #navMenu {
-                  background: #222e3a;
-                }
-              }
-              #navMenu li {
-                margin: 0.5rem 0;
-                text-align: left;
-                padding-left: 1.5rem;
-              }
-            }
-            </style>
+        #menuDropdownWrapper {
+          position: relative;
+          max-width: 100vw;
+          margin: 0 auto;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+        }
+        #menuToggle {
+          margin-right: 0;
+          padding: 0.5rem 1.2rem;
+          font-size: 1.1rem;
+          border: none;
+          border-radius: 0.38rem 0.38rem 0 0;
+          background: #1976d2;
+          color: #fff;
+          cursor: pointer;
+          box-shadow: 0 2px 8px rgba(25,118,210,0.10);
+          transition: background 0.2s;
+          align-items: center;
+          gap: 0.5rem;
+          width: 70vw;
+          max-width: 70vw;
+          display: none;
+        }
+        @media (prefers-color-scheme: dark) {
+          #menuToggle {
+        background: #222e3a;
+        color: #fff;
+        box-shadow: 0 2px 8px rgba(25,118,210,0.20);
+          }
+        }
+        @media (max-width: 768px) {
+          #menuToggle {
+        display: inline-flex;
+        width: 70vw !important;
+        max-width: 70vw !important;
+        border-radius: 0.38rem 0.38rem 0 0;
+          }
+          #navMenu {
+        display: none;
+        flex-direction: column;
+        background: #fff;
+        position: absolute;
+        top: calc(100% + 8px); /* Add spacing at the top */
+        left: 0;
+        left: 0;
+        width: 70vw !important;
+        max-width: 70vw !important;
+        z-index: 100;
+        box-shadow: 0 4px 16px rgba(25,118,210,0.08);
+        margin: 0;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.35s cubic-bezier(0.4,0,0.2,1);
+        border-radius: 0 0 0.38rem 0.38rem;
+        border: 1.5px solid #1976d2;
+        border-top: none;
+          }
+          @media (prefers-color-scheme: dark) {
+        #navMenu {
+          background: #222e3a;
+          border-color: #3a4a5a;
+        }
+          }
+          #navMenu li {
+        margin: 0.5rem 0;
+        text-align: left;
+        padding-left: 1.5rem;
+          }
+        }
+      </style>
       <script>
         // Show menu button only on mobile
         document.addEventListener('DOMContentLoaded', function () {
           const btn = document.getElementById('menuToggle');
           const navMenu = document.getElementById('navMenu');
           function setMenuWidths() {
-            if (window.innerWidth <= 768) {
-              // Set both button and menu to 70% of screen width
-              const targetWidth = Math.round(window.innerWidth * 0.7) + 'px';
-              btn.style.width = targetWidth;
-              navMenu.style.width = targetWidth;
-            } else {
-              btn.style.width = '';
-              navMenu.style.width = '';
-            }
+        if (window.innerWidth <= 768) {
+          // Set both button and menu to 70% of screen width
+          const targetWidth = Math.round(window.innerWidth * 0.7) + 'px';
+          btn.style.width = targetWidth;
+          navMenu.style.width = targetWidth;
+        } else {
+          btn.style.width = '';
+          navMenu.style.width = '';
+        }
           }
           function handleMenuToggleDisplay() {
-            if (window.innerWidth <= 768) {
-              btn.style.display = 'inline-flex';
-              navMenu.style.position = 'absolute';
-              navMenu.style.top = '100%';
-              navMenu.style.left = '0';
-              navMenu.style.margin = '0';
-              navMenu.style.overflow = 'hidden';
-              navMenu.style.transition = 'max-height 0.35s cubic-bezier(0.4,0,0.2,1)';
-              if (!navMenu.hasAttribute('data-initialized')) {
-                navMenu.style.maxHeight = '0';
-                navMenu.setAttribute('data-initialized', 'true');
-              }
-              setMenuWidths();
-            } else {
-              btn.style.display = 'none';
-              navMenu.style.display = '';
-              navMenu.style.position = '';
-              navMenu.style.top = '';
-              navMenu.style.left = '';
-              navMenu.style.width = '';
-              navMenu.style.margin = '';
-              navMenu.style.maxHeight = '';
-              navMenu.style.overflow = '';
-              navMenu.style.transition = '';
-              navMenu.removeAttribute('data-initialized');
-              btn.style.width = '';
-            }
+        if (window.innerWidth <= 768) {
+          btn.style.display = 'inline-flex';
+          navMenu.style.position = 'absolute';
+          navMenu.style.top = 'calc(100% + 8px)'; // Add spacing at the top
+          navMenu.style.left = '0';
+          navMenu.style.margin = '0';
+          navMenu.style.overflow = 'hidden';
+          navMenu.style.transition = 'max-height 0.35s cubic-bezier(0.4,0,0.2,1)';
+          navMenu.style.border = '1.5px solid #1976d2';
+          navMenu.style.borderTop = 'none';
+          navMenu.style.borderRadius = '0 0 0.38rem 0.38rem';
+          if (!navMenu.hasAttribute('data-initialized')) {
+            navMenu.style.maxHeight = '0';
+            navMenu.setAttribute('data-initialized', 'true');
+          }
+          setMenuWidths();
+        } else {
+          btn.style.display = 'none';
+          navMenu.style.display = '';
+          navMenu.style.position = '';
+          navMenu.style.top = '';
+          navMenu.style.left = '';
+          navMenu.style.width = '';
+          navMenu.style.margin = '';
+          navMenu.style.maxHeight = '';
+          navMenu.style.overflow = '';
+          navMenu.style.transition = '';
+          navMenu.style.border = '';
+          navMenu.style.borderTop = '';
+          navMenu.style.borderRadius = '';
+          navMenu.removeAttribute('data-initialized');
+          btn.style.width = '';
+        }
           }
           handleMenuToggleDisplay();
           setMenuWidths();
           window.addEventListener('resize', function() {
-            handleMenuToggleDisplay();
-            setMenuWidths();
+        handleMenuToggleDisplay();
+        setMenuWidths();
           });
 
           // Toggle nav menu on mobile with smooth dropdown
           btn.addEventListener('click', function () {
-            if (navMenu.style.maxHeight && navMenu.style.maxHeight !== '0px') {
-              navMenu.style.maxHeight = '0';
-            } else {
-              navMenu.style.display = 'block';
-              navMenu.style.maxHeight = navMenu.scrollHeight + 'px';
-            }
+        if (navMenu.style.maxHeight && navMenu.style.maxHeight !== '0px') {
+          navMenu.style.maxHeight = '0';
+        } else {
+          navMenu.style.display = 'block';
+          navMenu.style.maxHeight = navMenu.scrollHeight + 'px';
+        }
           });
           // Hide menu after transition if closed
           navMenu.addEventListener('transitionend', function () {
-            if (navMenu.style.maxHeight === '0px') {
-              navMenu.style.display = 'none';
-            }
+        if (navMenu.style.maxHeight === '0px') {
+          navMenu.style.display = 'none';
+        }
           });
         });
       </script>
