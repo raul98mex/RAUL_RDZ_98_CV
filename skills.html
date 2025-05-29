@@ -181,6 +181,16 @@
         opacity 0.35s cubic-bezier(.4,0,.2,1),
         transform 0.5s cubic-bezier(.4,0,.2,1);
         }
+        nav ul#navMenu.hiding {
+          max-height: 0;
+          opacity: 0;
+          transform: translateY(-16px) scaleY(0.95);
+          pointer-events: none;
+          transition:
+        max-height 0.5s cubic-bezier(.4,0,.2,1),
+        opacity 0.35s cubic-bezier(.4,0,.2,1),
+        transform 0.5s cubic-bezier(.4,0,.2,1);
+        }
         #menuDropdownWrapper.open #menuToggle {
           border-bottom-left-radius: 0;
           border-bottom-right-radius: 0;
@@ -225,8 +235,19 @@
           return window.innerWidth <= 700;
         }
         function closeMenu() {
-          navMenu.classList.remove('show');
-          wrapper.classList.remove('open');
+          if (navMenu.classList.contains('show')) {
+        navMenu.classList.remove('show');
+        navMenu.classList.add('hiding');
+        wrapper.classList.remove('open');
+        setTimeout(function() {
+          navMenu.classList.remove('hiding');
+          navMenu.style.display = '';
+        }, 500);
+          } else {
+        navMenu.classList.remove('hiding');
+        navMenu.style.display = '';
+        wrapper.classList.remove('open');
+          }
         }
         if (menuToggle && navMenu && wrapper) {
           menuToggle.addEventListener('click', function(e) {
@@ -238,14 +259,8 @@
             navMenu.classList.add('show');
             wrapper.classList.add('open');
           } else {
-            // Close: remove .show, then after transition, hide display
-            navMenu.classList.remove('show');
-            wrapper.classList.remove('open');
-            setTimeout(function() {
-          if (!navMenu.classList.contains('show')) {
-            navMenu.style.display = '';
-          }
-            }, 500);
+            // Close: remove .show, add .hiding for animation, then hide after transition
+            closeMenu();
           }
           e.stopPropagation();
         }
@@ -258,16 +273,17 @@
           !navMenu.contains(e.target)
         ) {
           closeMenu();
-          navMenu.style.display = '';
         }
           });
           // Close menu on resize to desktop
           window.addEventListener('resize', function() {
         if (!isMobile()) {
           closeMenu();
-          navMenu.style.display = '';
         }
           });
+        }
+      });
+        </script>
         }
       });
         </script>
