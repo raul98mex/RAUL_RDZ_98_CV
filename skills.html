@@ -29,15 +29,28 @@
     /* Mobile navigation styles */
     .mobile-nav-toggle {
       display: none;
-      background: none;
+      background: #1976d2;
       border: none;
-      font-size: 2rem;
+      font-size: 2.2rem;
       position: absolute;
       top: 1.2rem;
       right: 1.2rem;
       z-index: 2001;
-      color: #1976d2;
+      color: #fff;
       cursor: pointer;
+      border-radius: 50%;
+      box-shadow: 0 2px 8px rgba(25,118,210,0.18);
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+    .mobile-nav-toggle:hover,
+    .mobile-nav-toggle:focus {
+      background: #1253a2;
+      outline: none;
     }
     nav ul {
       display: flex;
@@ -48,7 +61,7 @@
     }
     @media (max-width: 700px) {
       .mobile-nav-toggle {
-        display: block;
+        display: flex;
       }
       nav ul {
         flex-direction: column;
@@ -79,6 +92,32 @@
         min-width: 36px;
         width: auto;
       }
+    }
+    /* Restore translate button to original style */
+    .lang-btn-container {
+      position: absolute;
+      top: 1.2rem;
+      left: 1.2rem;
+      z-index: 2100;
+    }
+    #langToggleBtn {
+      background: #fff;
+      color: #1976d2;
+      border: 2px solid #1976d2;
+      border-radius: 24px;
+      font-size: 1.08rem;
+      padding: 0.38rem 1.1rem;
+      cursor: pointer;
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(25,118,210,0.10);
+      transition: background 0.2s, color 0.2s, border 0.2s;
+      min-width: 44px;
+    }
+    #langToggleBtn:hover,
+    #langToggleBtn:focus {
+      background: #1976d2;
+      color: #fff;
+      outline: none;
     }
   </style>
 </head>
