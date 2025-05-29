@@ -87,6 +87,8 @@
           width: 100%;
           display: flex;
           justify-content: center;
+          flex-direction: column;
+          align-items: center;
         }
         #menuToggle {
           margin-right: 0;
@@ -104,6 +106,7 @@
           width: 70vw;
           max-width: 70vw;
           display: none;
+          margin-top: 1.2rem; /* Add padding at the top */
         }
         @media (prefers-color-scheme: dark) {
           #menuToggle {
@@ -113,11 +116,16 @@
           }
         }
         @media (max-width: 768px) {
+          #menuDropdownWrapper {
+        align-items: flex-start; /* Align button and dropdown to the left together */
+          }
           #menuToggle {
         display: inline-flex;
         width: 70vw !important;
         max-width: 70vw !important;
         border-radius: 0.38rem 0.38rem 0 0;
+        margin-top: 1.2rem; /* Ensure padding at the top on mobile */
+        margin-left: 0; /* Align with dropdown */
           }
           #navMenu {
         display: none;
@@ -125,7 +133,6 @@
         background: #fff;
         position: absolute;
         top: calc(100% + 8px); /* Add spacing at the top */
-        left: 0;
         left: 0;
         width: 70vw !important;
         max-width: 70vw !important;
@@ -138,6 +145,7 @@
         border-radius: 0 0 0.38rem 0.38rem;
         border: 1.5px solid #1976d2;
         border-top: none;
+        left: 0; /* Align dropdown with button */
           }
           @media (prefers-color-scheme: dark) {
         #navMenu {
