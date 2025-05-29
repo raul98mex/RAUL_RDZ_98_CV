@@ -101,9 +101,9 @@
       }
       nav ul#navMenu {
         transition:
-          max-height 0.45s cubic-bezier(.4,0,.2,1),
+          max-height 0.5s cubic-bezier(.4,0,.2,1),
           opacity 0.35s cubic-bezier(.4,0,.2,1),
-          transform 0.45s cubic-bezier(.4,0,.2,1);
+          transform 0.5s cubic-bezier(.4,0,.2,1);
         overflow: hidden;
         max-height: none;
         opacity: 1;
@@ -156,30 +156,30 @@
           background: var(--menu-bg, #fff);
           color: var(--menu-color, #222);
           position: absolute;
-          top: 0;
+          top: 100%;
           left: 0;
           right: 0;
-          box-shadow: 0 2px 16px rgba(0,0,0,0.10);
-          border-radius: 0 0 12px 12px;
+          box-shadow: 0 8px 24px rgba(0,0,0,0.13);
+          border-radius: 0 0 16px 16px;
           z-index: 1001;
-          padding-top: 3.2rem;
+          padding-top: 0.5rem;
           margin-top: 0;
           width: 100%;
           max-height: 0;
           opacity: 0;
-          transform: translateY(-32px) scaleY(0.98);
+          transform: translateY(-16px) scaleY(0.95);
           pointer-events: none;
           will-change: max-height, opacity, transform;
         }
         nav ul#navMenu.show {
-          max-height: 1000px;
+          max-height: 600px;
           opacity: 1;
           transform: translateY(0) scaleY(1);
           pointer-events: auto;
           transition:
-        max-height 0.45s cubic-bezier(.4,0,.2,1),
+        max-height 0.5s cubic-bezier(.4,0,.2,1),
         opacity 0.35s cubic-bezier(.4,0,.2,1),
-        transform 0.45s cubic-bezier(.4,0,.2,1);
+        transform 0.5s cubic-bezier(.4,0,.2,1);
         }
         #menuDropdownWrapper.open #menuToggle {
           border-bottom-left-radius: 0;
@@ -231,8 +231,23 @@
         if (menuToggle && navMenu && wrapper) {
           menuToggle.addEventListener('click', function(e) {
         if (isMobile()) {
-          navMenu.classList.toggle('show');
-          wrapper.classList.toggle('open', navMenu.classList.contains('show'));
+          if (!navMenu.classList.contains('show')) {
+            // Open: set display, force reflow, then add .show for animation
+            navMenu.style.display = 'flex';
+            void navMenu.offsetHeight;
+            navMenu.classList.add('show');
+            wrapper.classList.add('open');
+          } else {
+            // Close: remove .show, then after transition, hide display
+            navMenu.classList.remove('show');
+            wrapper.classList.remove('open');
+            setTimeout(function() {
+          if (!navMenu.classList.contains('show')) {
+            navMenu.style.display = '';
+          }
+            }, 500);
+          }
+          e.stopPropagation();
         }
           });
           // Hide menu when clicking outside (only on mobile)
@@ -243,31 +258,16 @@
           !navMenu.contains(e.target)
         ) {
           closeMenu();
+          navMenu.style.display = '';
         }
           });
           // Close menu on resize to desktop
           window.addEventListener('resize', function() {
         if (!isMobile()) {
           closeMenu();
+          navMenu.style.display = '';
         }
           });
-        }
-        // Improve animation: force reflow before adding .show for smooth transition
-        if (menuToggle && navMenu) {
-          menuToggle.addEventListener('click', function(e) {
-        if (isMobile() && !navMenu.classList.contains('show')) {
-          navMenu.style.transition = 'none';
-          navMenu.classList.add('show');
-          void navMenu.offsetWidth; // force reflow
-          navMenu.classList.remove('show');
-          navMenu.style.transition = '';
-          setTimeout(function() {
-            navMenu.classList.add('show');
-          }, 10);
-          wrapper.classList.toggle('open', true);
-          e.stopImmediatePropagation();
-        }
-          }, true);
         }
       });
         </script>
