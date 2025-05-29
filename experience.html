@@ -75,7 +75,7 @@
   <p>Business Analyst | Business Management Engineer | Web dev beginner</p>
   <nav>
     <div id="menuDropdownWrapper">
-      <button id="menuToggle" aria-label="Open menu" tabindex="0"></button>
+      <button id="menuToggle" aria-label="Open menu" tabindex="0">
         &#9776; <span id="menuToggleLabel">Job Experience</span>
       </button>
       <ul id="navMenu">
@@ -210,7 +210,7 @@
     }
     @media (min-width: 801px) {
       #menuToggle {
-        display: none;
+        display: none !important;
       }
       #navMenu {
         display: flex !important;
