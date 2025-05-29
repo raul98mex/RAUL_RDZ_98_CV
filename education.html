@@ -1,15 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Education - Raúl Rodríguez Ruiz</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link type="image/png" href="download icon/favicon.png" rel="icon" />
-    <script src="style.js"></script>
-    <script src="translate.js" defer></script>
-    <meta name="color-scheme" content="light dark" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects - Raúl Rodríguez Ruiz</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link type="image/png" href="download icon/favicon.png" rel="icon" />
+  <script src="style.js"></script>
+  <script src="translate.js" defer></script>
+  <meta name="color-scheme" content="light dark" />
+  <style>
+    .skill-description {
+      text-align: left;
+    }
+    .skill-title {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 0.5rem;
+    }
+    .skill-title span.arrow {
+      margin-left: auto;
+    }
+    .skill-icon {
+      width: 20px;
+      height: 20px;
+    }
+  </style>
+  
 </head>
+
+<body>
+  <div class="lang-btn-container">
+    <button onclick="toggleLanguage()" id="langToggleBtn" data-lang="en">
+      🇲🇽 ES
+    </button>
+  </div>
+  <style>
+    .lang-btn-container {
+      position: fixed;
+      bottom: 1rem;
+      left: 1rem;
+      z-index: 1000;
+      width: auto;
+      max-width: 90vw;
+    }
+    #langToggleBtn {
+      width: auto;
+      min-width: 36px;
+      font-size: 1rem;
+      padding: 0.38rem 0.9rem;
+      border-radius: 0.38rem;
+      background-color: #1976d2;
+      color: white;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(25,118,210,0.10);
+      transition: background 0.2s;
+      font-family: inherit;
+    }
+    @media (max-width: 400px) {
+      #langToggleBtn {
+        font-size: 0.98rem;
+        padding: 0.32rem 0.7rem;
+        min-width: 36px;
+        width: auto;
+      }
+    }
+  </style>
+    </button>
 <body>
     <header>
         <h1>Raúl Rodríguez Ruiz</h1>
@@ -130,43 +189,7 @@
     </div>
   </section>
   <p class="footer-text" style="text-align: center;">&copy; 2025 Raúl Rodríguez Ruiz. All rights reserved.</p>
-  <div class="lang-btn-container">
-    <button onclick="toggleLanguage()" id="langToggleBtn" data-lang="en">
-      🇲🇽 ES
-    </button>
-  </div>
-  <style>
-    .lang-btn-container {
-      position: fixed;
-      bottom: 1rem;
-      left: 1rem;
-      z-index: 1000;
-      width: auto;
-      max-width: 90vw;
-    }
-    #langToggleBtn {
-      width: auto;
-      min-width: 36px;
-      font-size: 1rem;
-      padding: 0.38rem 0.9rem;
-      border-radius: 0.38rem;
-      background-color: #1976d2;
-      color: white;
-      border: none;
-      cursor: pointer;
-      box-shadow: 0 2px 8px rgba(25,118,210,0.10);
-      transition: background 0.2s;
-      font-family: inherit;
-    }
-    @media (max-width: 400px) {
-      #langToggleBtn {
-        font-size: 0.98rem;
-        padding: 0.32rem 0.7rem;
-        min-width: 36px;
-        width: auto;
-      }
-    }
-  </style>
+</footer>
 </div>
 </body>
 </html>
