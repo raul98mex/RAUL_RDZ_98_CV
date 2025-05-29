@@ -105,78 +105,79 @@
       }
       @media (max-width: 700px) {
       nav ul#navMenu {
-        display: flex;
-        flex-direction: column;
-        background: var(--menu-bg, #fff);
-        color: var(--menu-color, #222);
-        position: absolute;
-        top: 60px;
-        left: 10px;
-        right: 10px;
-        box-shadow: 0 2px 16px rgba(0,0,0,0.10);
-        border-radius: 12px;
-        z-index: 1001;
-        padding-top: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      background: var(--menu-bg, #fff);
+      color: var(--menu-color, #222);
+      position: absolute;
+      top: 60px;
+      left: 10px;
+      right: 10px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+      border-radius: 12px;
+      z-index: 1001;
+      padding-top: 1.2rem;
       }
       nav ul#navMenu:not(.show) {
-        display: flex;
+      display: flex;
       }
       nav #menuToggle {
-        display: inline-block;
-        background: #1976d2;
-        color: #fff;
-        border: none;
-        padding: 0.5rem 1rem;
-        border-radius: 6px;
-        font-size: 1.2rem;
-        margin-bottom: 0.5rem;
-        cursor: pointer;
+      display: inline-block;
+      background: #1976d2;
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      cursor: pointer;
+      margin-top: 1.2rem; /* Lower the button for mobile */
       }
       nav ul#navMenu li.section-menu a {
-        color: inherit;
-        padding: 0.7rem 1.2rem;
-        text-decoration: none;
-        display: block;
-        border-radius: 6px;
-        transition: background 0.2s;
+      color: inherit;
+      padding: 0.7rem 1.2rem;
+      text-decoration: none;
+      display: block;
+      border-radius: 6px;
+      transition: background 0.2s;
       }
       nav ul#navMenu li.section-menu a:hover,
       nav ul#navMenu li.section-menu.active a {
-        background: var(--menu-hover, #e3eafc);
+      background: var(--menu-hover, #e3eafc);
       }
       }
       @media (min-width: 701px) {
       nav #menuToggle {
-        display: none !important;
+      display: none !important;
       }
       nav ul#navMenu {
-        display: flex !important;
-        flex-direction: row;
-        position: static;
-        box-shadow: none;
-        background: none;
-        color: inherit;
-        max-height: none !important;
-        opacity: 1 !important;
-        padding-top: 0 !important;
+      display: flex !important;
+      flex-direction: row;
+      position: static;
+      box-shadow: none;
+      background: none;
+      color: inherit;
+      max-height: none !important;
+      opacity: 1 !important;
+      padding-top: 0 !important;
       }
       nav ul#navMenu li.section-menu a {
-        padding: 0.5rem 1.2rem;
+      padding: 0.5rem 1.2rem;
       }
       }
       /* Light/Dark mode support */
       @media (prefers-color-scheme: dark) {
       nav ul#navMenu {
-        --menu-bg: #23272f;
-        --menu-color: #f3f6fa;
-        --menu-hover: #2d3642;
+      --menu-bg: #23272f;
+      --menu-color: #f3f6fa;
+      --menu-hover: #2d3642;
       }
       }
       @media (prefers-color-scheme: light) {
       nav ul#navMenu {
-        --menu-bg: #fff;
-        --menu-color: #222;
-        --menu-hover: #e3eafc;
+      --menu-bg: #fff;
+      --menu-color: #222;
+      --menu-hover: #e3eafc;
       }
       }
     </style>
@@ -185,19 +186,19 @@
       var menuToggle = document.getElementById('menuToggle');
       var navMenu = document.getElementById('navMenu');
       if (menuToggle && navMenu) {
-        menuToggle.addEventListener('click', function() {
-        navMenu.classList.toggle('show');
-        });
-        // Hide menu when clicking outside
-        document.addEventListener('click', function(e) {
-        if (
-          window.innerWidth <= 700 &&
-          !menuToggle.contains(e.target) &&
-          !navMenu.contains(e.target)
-        ) {
-          navMenu.classList.remove('show');
-        }
-        });
+      menuToggle.addEventListener('click', function() {
+      navMenu.classList.toggle('show');
+      });
+      // Hide menu when clicking outside
+      document.addEventListener('click', function(e) {
+      if (
+        window.innerWidth <= 700 &&
+        !menuToggle.contains(e.target) &&
+        !navMenu.contains(e.target)
+      ) {
+        navMenu.classList.remove('show');
+      }
+      });
       }
       });
     </script>
