@@ -2,7 +2,23 @@ function toggleLanguage() {
   const langBtn = document.getElementById("langToggleBtn");
   const isEnglish = langBtn.dataset.lang === "en";
   langBtn.dataset.lang = isEnglish ? "es" : "en";
-langBtn.textContent = isEnglish ? "🇬🇧 EN" : "🇪🇸 ES";
+langBtn.innerHTML = isEnglish
+    ? '<span style="font-size:1.2em;vertical-align:middle;">🇬🇧</span> <span style="font-size:1em;vertical-align:middle;">EN</span>'
+    : '<span style="font-size:1.2em;vertical-align:middle;">🇪🇸</span> <span style="font-size:1em;vertical-align:middle;">ES</span>';
+langBtn.style.display = "inline-flex";
+langBtn.style.alignItems = "center";
+langBtn.style.gap = "0.3em";
+langBtn.style.padding = "0.4em 0.8em";
+langBtn.style.fontSize = "1em";
+langBtn.style.borderRadius = "0.5em";
+langBtn.style.border = "1px solid #ccc";
+langBtn.style.background = "#fff";
+langBtn.style.cursor = "pointer";
+langBtn.style.boxShadow = "0 1px 4px rgba(0,0,0,0.07)";
+langBtn.style.userSelect = "none";
+langBtn.style.transition = "background 0.2s";
+langBtn.style.minWidth = "60px";
+langBtn.style.minHeight = "40px";
 
   const translations = {
     "Education": "Educación",
