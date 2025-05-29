@@ -26,38 +26,51 @@
       width: 20px;
       height: 20px;
     }
-  </style>
-  
-</head>
-
-<body>
-  <div class="lang-btn-container">
-    <button onclick="toggleLanguage()" id="langToggleBtn" data-lang="en">
-      🇲🇽 ES
-    </button>
-  </div>
-  <style>
-    .lang-btn-container {
-      position: fixed;
-      bottom: 1rem;
-      left: 1rem;
-      z-index: 1000;
-      width: auto;
-      max-width: 90vw;
-    }
-    #langToggleBtn {
-      width: auto;
-      min-width: 36px;
-      font-size: 1rem;
-      padding: 0.38rem 0.9rem;
-      border-radius: 0.38rem;
-      background-color: #1976d2;
-      color: white;
+    /* Mobile navigation styles */
+    .mobile-nav-toggle {
+      display: none;
+      background: none;
       border: none;
+      font-size: 2rem;
+      position: absolute;
+      top: 1.2rem;
+      right: 1.2rem;
+      z-index: 2001;
+      color: #1976d2;
       cursor: pointer;
-      box-shadow: 0 2px 8px rgba(25,118,210,0.10);
-      transition: background 0.2s;
-      font-family: inherit;
+    }
+    nav ul {
+      display: flex;
+      gap: 1.2rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    @media (max-width: 700px) {
+      .mobile-nav-toggle {
+        display: block;
+      }
+      nav ul {
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -100vw;
+        width: 70vw;
+        max-width: 320px;
+        height: 100vh;
+        background: #fff;
+        box-shadow: -2px 0 12px rgba(25,118,210,0.12);
+        padding: 4rem 1.5rem 2rem 1.5rem;
+        gap: 1.5rem;
+        transition: right 0.3s cubic-bezier(.4,0,.2,1);
+        z-index: 2000;
+      }
+      nav ul.open {
+        right: 0;
+      }
+      nav {
+        position: relative;
+      }
     }
     @media (max-width: 400px) {
       #langToggleBtn {
@@ -68,13 +81,22 @@
       }
     }
   </style>
+</head>
+
+<body>
+  <div class="lang-btn-container">
+    <button onclick="toggleLanguage()" id="langToggleBtn" data-lang="en">
+      🇲🇽 ES
     </button>
   </div>
   <header>
     <h1>Raúl Rodríguez Ruiz</h1>
     <p>Business Analyst | Business Management Engineer | Web dev beginner</p>
+    <button class="mobile-nav-toggle" aria-label="Open navigation" onclick="toggleMobileNav()">
+      &#9776;
+    </button>
     <nav>
-      <ul>
+      <ul id="mainNav">
         <li class="section-menu"><a href="index.html">Home</a></li>
         <li class="section-menu active"><a href="skills.html">Skills</a></li>
         <li class="section-menu"><a href="projects.html">Projects</a></li>
@@ -83,6 +105,27 @@
         <li class="section-menu"><a href="#contact">Contact</a></li>
       </ul>
     </nav>
+    <script>
+      function toggleMobileNav() {
+        var nav = document.getElementById('mainNav');
+        nav.classList.toggle('open');
+      }
+      // Optional: Close nav when clicking outside or on a link (mobile)
+      document.addEventListener('click', function(e) {
+        var nav = document.getElementById('mainNav');
+        var toggle = document.querySelector('.mobile-nav-toggle');
+        if (
+          nav.classList.contains('open') &&
+          !nav.contains(e.target) &&
+          !toggle.contains(e.target)
+        ) {
+          nav.classList.remove('open');
+        }
+        if (e.target.tagName === 'A' && nav.classList.contains('open')) {
+          nav.classList.remove('open');
+        }
+      });
+    </script>
   </header>
 
   <section id="skills">
