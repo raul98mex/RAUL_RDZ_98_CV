@@ -548,3 +548,20 @@ footer {
     box-shadow: 0 4px 16px rgba(144, 202, 249, 0.18);
   }
 }
+
+/* Dark mode style for skill icons */
+@media (prefers-color-scheme: dark) {
+  .skill-icon-darkmode {
+    filter: brightness(0) invert(1);
+  }
+}
+/* Hide menu button on desktop */
+#menuToggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  #menuToggle {
+    display: block;
+  }
+}
