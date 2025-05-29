@@ -82,22 +82,33 @@
       <script>
         // Show menu button only on mobile
         function handleMenuToggleDisplay() {
-          const btn = document.getElementById('menuToggle');
+            const btn = document.getElementById('menuToggle');
             const navMenu = document.getElementById('navMenu');
+            function setMenuWidths() {
+            if (window.innerWidth <= 768) {
+              // Set both button and menu to same width (relative to wrapper)
+              const wrapper = document.getElementById('menuDropdownWrapper');
+              const wrapperWidth = wrapper.offsetWidth;
+              btn.style.width = wrapperWidth + 'px';
+              navMenu.style.width = wrapperWidth + 'px';
+            } else {
+              btn.style.width = '';
+              navMenu.style.width = '';
+            }
+            }
             if (window.innerWidth <= 768) {
             btn.style.display = 'inline-flex';
             navMenu.style.position = 'absolute';
             navMenu.style.top = '100%';
             navMenu.style.left = '0';
-            navMenu.style.width = '100vw';
             navMenu.style.margin = '0';
-            // Prepare for animation
             navMenu.style.overflow = 'hidden';
             navMenu.style.transition = 'max-height 0.35s cubic-bezier(0.4,0,0.2,1)';
             if (!navMenu.hasAttribute('data-initialized')) {
               navMenu.style.maxHeight = '0';
               navMenu.setAttribute('data-initialized', 'true');
             }
+            setMenuWidths();
             } else {
             btn.style.display = 'none';
             navMenu.style.display = '';
@@ -110,41 +121,49 @@
             navMenu.style.overflow = '';
             navMenu.style.transition = '';
             navMenu.removeAttribute('data-initialized');
+            btn.style.width = '';
             }
-          }
-          window.addEventListener('resize', handleMenuToggleDisplay);
-          window.addEventListener('DOMContentLoaded', handleMenuToggleDisplay);
+            window.addEventListener('resize', function() {
+            handleMenuToggleDisplay();
+            setMenuWidths();
+            });
+            window.addEventListener('DOMContentLoaded', function() {
+            handleMenuToggleDisplay();
+            setMenuWidths();
+            });
 
-          // Toggle nav menu on mobile with smooth dropdown
-          document.addEventListener('DOMContentLoaded', function () {
+            // Toggle nav menu on mobile with smooth dropdown
+            document.addEventListener('DOMContentLoaded', function () {
             const btn = document.getElementById('menuToggle');
             const navMenu = document.getElementById('navMenu');
             btn.addEventListener('click', function () {
-            if (navMenu.style.maxHeight && navMenu.style.maxHeight !== '0px') {
+              if (navMenu.style.maxHeight && navMenu.style.maxHeight !== '0px') {
               navMenu.style.maxHeight = '0';
-            } else {
+              } else {
               navMenu.style.display = 'block';
               navMenu.style.maxHeight = navMenu.scrollHeight + 'px';
-            }
+              }
             });
             // Hide menu after transition if closed
             navMenu.addEventListener('transitionend', function () {
-            if (navMenu.style.maxHeight === '0px') {
+              if (navMenu.style.maxHeight === '0px') {
               navMenu.style.display = 'none';
-            }
+              }
             });
-          });
-          </script>
-          <style>
-          #menuDropdownWrapper {
+            });
+            </script>
+            <style>
+            #menuDropdownWrapper {
             position: relative;
-          }
-          #menuToggle {
-            margin-right: 1rem;
+            max-width: 420px;
+            margin: 0 auto;
+            }
+            #menuToggle {
+            margin-right: 0;
             padding: 0.5rem 1.2rem;
             font-size: 1.1rem;
             border: none;
-            border-radius: 0.38rem;
+            border-radius: 0.38rem 0.38rem 0 0;
             background: #1976d2;
             color: #fff;
             cursor: pointer;
@@ -152,45 +171,50 @@
             transition: background 0.2s;
             align-items: center;
             gap: 0.5rem;
-          }
-          @media (prefers-color-scheme: dark) {
-            #menuToggle {
-            background: #222e3a;
-            color: #fff;
-            box-shadow: 0 2px 8px rgba(25,118,210,0.20);
-            }
-          }
-          @media (max-width: 768px) {
-            #menuToggle {
-            display: inline-flex;
-            }
-            #navMenu {
+            width: 100%;
             display: none;
-            flex-direction: column;
-            background: #fff;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            width: 100vw;
-            z-index: 100;
-            box-shadow: 0 4px 16px rgba(25,118,210,0.08);
-            margin: 0;
-            overflow: hidden;
-            max-height: 0;
-            transition: max-height 0.35s cubic-bezier(0.4,0,0.2,1);
             }
             @media (prefers-color-scheme: dark) {
-            #navMenu {
+            #menuToggle {
               background: #222e3a;
+              color: #fff;
+              box-shadow: 0 2px 8px rgba(25,118,210,0.20);
             }
+            }
+            @media (max-width: 768px) {
+            #menuToggle {
+              display: inline-flex;
+              width: 100%;
+              border-radius: 0.38rem 0.38rem 0 0;
+            }
+            #navMenu {
+              display: none;
+              flex-direction: column;
+              background: #fff;
+              position: absolute;
+              top: 100%;
+              left: 0;
+              width: 100%;
+              z-index: 100;
+              box-shadow: 0 4px 16px rgba(25,118,210,0.08);
+              margin: 0;
+              overflow: hidden;
+              max-height: 0;
+              transition: max-height 0.35s cubic-bezier(0.4,0,0.2,1);
+              border-radius: 0 0 0.38rem 0.38rem;
+            }
+            @media (prefers-color-scheme: dark) {
+              #navMenu {
+              background: #222e3a;
+              }
             }
             #navMenu li {
-            margin: 0.5rem 0;
-            text-align: left;
-            padding-left: 1.5rem;
+              margin: 0.5rem 0;
+              text-align: left;
+              padding-left: 1.5rem;
             }
-          }
-          </style>
+            }
+            </style>
       </button>
       <ul id="navMenu">
         <li class="section-menu"><a href="index.html">Home</a></li>
